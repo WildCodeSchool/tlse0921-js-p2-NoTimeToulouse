@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
-import Filter from './components/Filter';
+import DisplayEvent from './components/DisplayEvent';
+// import Filter from './components/Filter';
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -53,7 +54,8 @@ function App() {
       <button type="button" onClick={getInfos}>
         Get infos
       </button>
-      <Filter {...events} />
+      {/* <Filter {...events} /> */}
+      <DisplayEvent events={events} />
     </div>
   );
 }

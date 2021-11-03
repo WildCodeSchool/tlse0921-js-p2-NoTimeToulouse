@@ -1,7 +1,6 @@
 import Button from '../importcomponents/button';
 
 const DisplayEvent = ({ events }) => (
-
   <div className="sampleEvent">
     {events.map((event) => (
       <div>
@@ -31,7 +30,9 @@ const DisplayEvent = ({ events }) => (
                   {event.fields.lieu_adresse_2} {event.fields.code_postal}{' '}
                   {event.fields.commune}
                 </li>
-                <li>{event.fields.tarif_normal}</li>
+                {event.fields.tarif_normal && (
+                  <li>{event.fields.tarif_normal}</li>
+                )}
                 <li>{event.fields.station_metro_tram_a_proximite}</li>
                 <li>{event.fields.dates_affichage_horaires}</li>
               </ul>
@@ -46,7 +47,11 @@ const DisplayEvent = ({ events }) => (
               />
             </div>
             <div>
-              <Button as="a" href="https://citymapper.com/toulouse" target="_blank">
+              <Button
+                as="a"
+                href="https://citymapper.com/toulouse"
+                target="_blank"
+              >
                 Trouves ton chemin
               </Button>
             </div>

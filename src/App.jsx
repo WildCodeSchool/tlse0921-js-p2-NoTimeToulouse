@@ -1,9 +1,12 @@
-import RemoveMe from './components/RemoveMe';
+// import { useState } from 'react';
+import DisplayEvent from './components/displayEvent';
+import sampleEvent from './components/sampleEvent';
 
 function App() {
+  // const [events, setEvents] = useState(sampleEvent);
   return (
     <div>
-      <RemoveMe />
+      <DisplayEvent events={sampleEvent} />
     </div>
   );
 }

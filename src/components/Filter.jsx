@@ -1,17 +1,20 @@
-// import DisplayEvent from './DisplayEvent';
+import DisplayEvent from './DisplayEvent';
 
-// const Filter = (...eventList) => (
-//   <div>
-//     {eventList
-//       .filter(
-//         (event) =>
-//           event.eventTheme !== undefined &&
-//           (event.eventTheme === 'Cinéma' || event.eventTheme === 'cinéma')
-//       )
-//       .map((event) => (
-//         <DisplayEvent key={event.recordid} {...event} />
-//       ))}
-//   </div>
-// );
+const Filter = ({ events }) => {
+  console.log(events);
+  return (
+    <div>
+      {events
+        .filter(
+          (event) => event.fields.eventTheme !== undefined
+            && (event.fields.eventTheme === 'Cinéma'
+              || event.fields.eventTheme === 'cinéma'),
+        )
+        .map((event) => (
+          <DisplayEvent key={event.recordid} events={event} />
+        ))}
+    </div>
+  );
+};
 
-// export default Filter;
+export default Filter;

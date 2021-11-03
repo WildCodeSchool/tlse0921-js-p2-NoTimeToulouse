@@ -1,11 +1,14 @@
-import RemoveMe from './components/RemoveMe';
+import React, { useState } from 'react';
+import Card from './components/Card';
+import toulouseEvents from './events';
 
-function App() {
+export default function App() {
+  // eslint-disable-next-line no-unused-vars
+  const [events, setEvents] = useState(toulouseEvents);
   return (
     <div>
-      <RemoveMe />
+      {events.map((event) => <Card event={event} />)}
     </div>
+
   );
 }
-
-export default App;

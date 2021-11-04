@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { useState } from 'react';
-// import DisplayEvent from './components/DisplayEvent';
-import Filter from './components/Filter';
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -26,6 +24,8 @@ function App() {
           reservation_site_internet: booking,
           station_metro_tram_a_proximite: access,
           geo_point: geoPoint,
+          tarif_normal: price,
+          horaire_debut: startHour,
         } = e.fields;
         return {
           // destructuration de l'objet que l'on reçoit
@@ -42,6 +42,9 @@ function App() {
             booking,
             access,
             geoPoint,
+            // geopoint[latitude, longitude]
+            price,
+            startHour,
           },
         };
       }))
@@ -54,7 +57,6 @@ function App() {
       <button type="button" onClick={getInfos}>
         Get infos
       </button>
-      <Filter events={events} />
     </div>
   );
 }

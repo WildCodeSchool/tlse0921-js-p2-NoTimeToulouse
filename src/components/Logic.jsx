@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
-
   useEffect(() => {
     axios
       .get(
@@ -52,9 +51,32 @@ const GetInfos = () => {
         setEvents(fetchedEvents);
       });
   }, []);
+
+  const [searchValue, setSearchValue] = useState('');
+  const [searchButton, setSearchButton] = useState(false);
+  useEffect(() => {
+    console.log(searchValue);
+  }, [searchButton]);
+
+  const handleChangeSearch = (e) => {
+    setSearchValue(e.target.value);
+  };
+  const handleSubmit = () => {
+    setSearchButton(!searchButton);
+  };
   console.log(events);
   return (
     <div>
+      <input
+        type="text"
+        placeholder="rechercher"
+        value={searchValue}
+        onChange={handleChangeSearch}
+      />
+      <button type="submit" onClick={handleSubmit}>
+        {' '}
+        Search
+      </button>
       <h2>Liste événements triés</h2>
     </div>
   );

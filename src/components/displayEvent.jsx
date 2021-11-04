@@ -33,8 +33,9 @@ const DisplayEvent = ({ events }) => (
                 {event.fields.tarif_normal && (
                   <li>{event.fields.tarif_normal}</li>
                 )}
-                <li>{event.fields.station_metro_tram_a_proximite}</li>
-                <li>{event.fields.dates_affichage_horaires}</li>
+                {event.fields.station_metro_tram_a_proximite && (
+                  <li>{event.fields.station_metro_tram_a_proximite}</li>
+                )}
               </ul>
             </div>
             <div className="eventMap">

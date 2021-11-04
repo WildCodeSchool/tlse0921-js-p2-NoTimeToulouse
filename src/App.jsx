@@ -4,7 +4,6 @@ function App() {
   return (
     <div>
       <GetInfos />
-      <h2>eee</h2>
     </div>
   );
 }

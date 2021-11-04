@@ -11,6 +11,6 @@
   "rules": {
     "indentation": 2,
     "string-quotes": "single",
-    "font-family-name-quotes":null
+    "font-family-name-quotes": null
   }
 }

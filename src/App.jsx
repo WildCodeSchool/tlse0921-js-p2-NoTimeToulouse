@@ -1,9 +1,9 @@
-import RemoveMe from './components/RemoveMe';
+import Location from './components/Location';
 
 function App() {
   return (
     <div>
-      <RemoveMe />
+      <Location />
     </div>
   );
 }

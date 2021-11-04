@@ -3,7 +3,6 @@
 export default function SearchEvents({
   searchValue,
   handleChangeSearch,
-  isSend,
   handleIsChanged,
 }) {
   return (
@@ -14,11 +13,9 @@ export default function SearchEvents({
         value={searchValue}
         onChange={(e) => handleChangeSearch(e.target.value)}
       />
-      <input
-        type="submit"
-        onSubmit={() => handleIsChanged(!isSend)}
-        value="Search"
-      />
+      <button type="submit" onClick={() => handleIsChanged(true)}>
+        Search
+      </button>
     </div>
   );
 }

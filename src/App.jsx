@@ -1,12 +1,13 @@
 // import { useState } from 'react';
-import DisplayEvent from './components/displayEvent';
-import sampleEvent from './components/sampleEvent';
+import GetInfos from './components/Logic';
 
 function App() {
   // const [events, setEvents] = useState(sampleEvent);
   return (
     <div>
-      <DisplayEvent events={sampleEvent} />
+      <GetInfos />
+      <button type="button">Get infos</button>
+      <h2>eee</h2>
     </div>
   );
 }

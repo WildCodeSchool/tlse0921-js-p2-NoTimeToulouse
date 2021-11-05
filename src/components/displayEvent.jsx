@@ -6,13 +6,8 @@ const DisplayEvent = ({ events }) => (
     {events.map((event) => (
       <div>
         <section className="describeEvent">
-          <h1>{event.fields.nom_de_la_manifestation}</h1>
-          <img
-            src={event.fields.img}
-            alt={event.fields.nom_de_la_manifestation}
-            width="400"
-          />
-          <p>{event.fields.descriptif_long}</p>
+          <h1>{event.fields.name}</h1>
+          <p>{event.fields.longDescription}</p>
         </section>
         <section className="detailEvent">
           <div className="infoEvent">
@@ -26,29 +21,16 @@ const DisplayEvent = ({ events }) => (
             </div>
             <div className="describeList">
               <ul>
-                <li>{event.fields.dates_affichage_horaires}</li>
+                <li>{event.fields.dates}</li>
                 <li>
-                  {event.fields.lieu_adresse_2} {event.fields.code_postal}{' '}
-                  {event.fields.commune}
+                  {event.fields.adress} {event.fields.zipCode}{' '}
+                  {event.fields.city}
                 </li>
-                {event.fields.tarif_normal && (
-                  <li>{event.fields.tarif_normal}</li>
-                )}
-                {event.fields.station_metro_tram_a_proximite && (
-                  <li>{event.fields.station_metro_tram_a_proximite}</li>
-                )}
+                {event.fields.price && <li>{event.fields.price}</li>}
+                {event.fields.access && <li>{event.fields.access}</li>}
               </ul>
             </div>
-            <Location
-              center={[
-                event.fields.googlemap_latitude,
-                event.fields.googlemap_longitude,
-              ]}
-              marker={[
-                event.fields.googlemap_latitude,
-                event.fields.googlemap_longitude,
-              ]}
-            />
+            <Location marker={[event.fields.geoPoint]} />
             <div>
               <Button
                 as="a"

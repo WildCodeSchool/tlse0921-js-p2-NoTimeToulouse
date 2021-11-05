@@ -21,6 +21,15 @@ const ContactForm = () => {
   return (
     <form onSubmit="handleSubmit">
       <h2>Contactez-nous</h2>
+      <div className="social-category">
+        <select type="select">
+          <nom>who are you ?</nom>
+          <libellé>what is your social category ?</libellé>
+          <option>user</option>
+          <option>organiser</option>
+          <option>sponsor</option>
+        </select>
+      </div>
       <div className="form-content">
         <input
           type="text"

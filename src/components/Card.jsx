@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const Card = ({ event }) => {
   const {
@@ -9,8 +10,9 @@ const Card = ({ event }) => {
     categorie_de_la_manifestation: category,
     reservation_email: bookingMail,
   } = event.fields;
+  const EventsCard = styled.div``;
   return (
-    <div className="card">
+    <EventsCard className="card">
       <div>
         <h2>{name}</h2>
         <div className="description">
@@ -23,7 +25,7 @@ const Card = ({ event }) => {
           {bookingMail && <li>{bookingMail}</li>}
         </ul>
       </div>
-    </div>
+    </EventsCard>
   );
 };
 export default Card;

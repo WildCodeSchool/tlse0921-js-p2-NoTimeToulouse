@@ -45,7 +45,7 @@ const Footer = () => (
     Realised with:
     <ul>
       <li>
-        <a href="https://styled-components.com/">Stylled components</a>
+        <a href="https://styled-components.com/">Styled components</a>
       </li>
       <li>
         <a href="https://react-leaflet.js.org/">React Leaflet</a>

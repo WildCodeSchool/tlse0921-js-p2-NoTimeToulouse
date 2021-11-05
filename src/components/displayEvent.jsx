@@ -1,4 +1,5 @@
 import Button from '../importcomponents/button';
+import Location from './Location';
 
 const DisplayEvent = ({ events }) => (
   <div className="sampleEvent">
@@ -38,15 +39,16 @@ const DisplayEvent = ({ events }) => (
                 )}
               </ul>
             </div>
-            <div className="eventMap">
-              <iframe
-                title="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d611.9382793409778!2d1.444537678985124!3d43.60426057910968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb620f0de75f%3A0xede79dda35ac152d!2sH%C3%B4tel%20de%20Ville%20de%20Toulouse!5e0!3m2!1sfr!2sfr!4v1635777390452!5m2!1sfr!2sfr"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
+            <Location
+              center={[
+                event.fields.googlemap_latitude,
+                event.fields.googlemap_longitude,
+              ]}
+              marker={[
+                event.fields.googlemap_latitude,
+                event.fields.googlemap_longitude,
+              ]}
+            />
             <div>
               <Button
                 as="a"

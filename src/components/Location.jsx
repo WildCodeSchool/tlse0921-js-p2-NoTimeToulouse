@@ -1,27 +1,31 @@
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
+import '../index.css';
 
 const Location = ({ marker }) => {
-  const latitude = marker[0][0];
-  const longitude = marker[0][1];
+  let position = [];
 
-  if (marker === undefined) {
-    return null;
+  if (marker[0] === undefined) {
+    position = [43.36, 1.25];
+  } else {
+    [position] = marker;
   }
 
   return (
-    <MapContainer center={[latitude, longitude]} zoom={20} scrollWheelZoom>
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={[latitude, longitude]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
-    </MapContainer>
+    <div>
+      <MapContainer center={position} zoom={20} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </div>
   );
 };
 

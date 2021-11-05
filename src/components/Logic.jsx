@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import DisplayEvent from './displayEvent';
+import '../index.css';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
@@ -8,7 +9,7 @@ const GetInfos = () => {
   useEffect(() => {
     axios
       .get(
-        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=500&facet=type_de_manifestation',
+        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=400&facet=type_de_manifestation',
       )
       .then((response) => response.data.records)
       // on convertit le nom des variables via un map

@@ -1,5 +1,6 @@
 import Button from '../importcomponents/button';
 import Location from './Location';
+import '../index.css';
 
 const DisplayEvent = ({ events }) => (
   <div className="sampleEvent">
@@ -30,7 +31,9 @@ const DisplayEvent = ({ events }) => (
                 {event.fields.access && <li>{event.fields.access}</li>}
               </ul>
             </div>
-            <Location marker={[event.fields.geoPoint]} />
+            <div id="map">
+              <Location marker={[event.fields.geoPoint]} />
+            </div>
             <div>
               <Button
                 as="a"

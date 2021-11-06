@@ -32,7 +32,10 @@ const DisplayEvent = ({ events }) => (
               </ul>
             </div>
             <div id="map">
-              <Location marker={[event.fields.geoPoint]} />
+              <Location
+                marker={[event.fields.geoPoint]}
+                adress={event.fields.adress}
+              />
             </div>
             <div>
               <Button

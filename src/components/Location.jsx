@@ -3,7 +3,7 @@ import {
 } from 'react-leaflet';
 import '../index.css';
 
-const Location = ({ marker }) => {
+const Location = ({ marker, adress }) => {
   let position = [];
 
   if (marker[0] === undefined) {
@@ -21,7 +21,7 @@ const Location = ({ marker }) => {
         />
         <Marker position={position}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            {adress === undefined ? <p>Lieu événement</p> : <p>{adress}</p>}
           </Popup>
         </Marker>
       </MapContainer>

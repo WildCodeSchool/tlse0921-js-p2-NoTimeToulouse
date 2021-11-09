@@ -62,7 +62,6 @@ const GetInfos = () => {
   console.log(events);
   return (
     <div>
-      <h2>Liste événements triés</h2>
       {events.map((event) => (
         <Cards event={event} />
       ))}

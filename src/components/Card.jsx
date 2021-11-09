@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Card = ({ event }) => {
-  const {
-    nom_de_la_manifestation: name,
-    descriptif_court: description,
-    dates_affichage_horaire: date,
-    commune: locality,
-    categorie_de_la_manifestation: category,
-    reservation_email: bookingMail,
-  } = event.fields;
+  // const {
+  //   nom_de_la_manifestation: name,
+  //   descriptif_court: description,
+  //   dates_affichage_horaire: date,
+  //   commune: locality,
+  //   categorie_de_la_manifestation: category,
+  //   reservation_email: bookingMail,
+  // } = event.fields;
 
   const EventsCard = styled.div`
     display: flex;
@@ -19,15 +19,15 @@ const Card = ({ event }) => {
 
   return (
     <EventsCard>
-      <h2>{name}</h2>
+      <h2>{event.fields.name}</h2>
       <div className="description">
-        <p>{description}</p>
+        <p>{event.fields.littleDescription}</p>
       </div>
       <ul className="infospratiques">
-        {date && <li>{date}</li>}
-        {locality && <li>{locality}</li>}
-        {category && <li>{category}</li>}
-        {bookingMail && <li>{bookingMail}</li>}
+        {event.fields.dates && <li>{event.fields.dates}</li>}
+        {event.fields.city && <li>{event.fields.city}</li>}
+        {event.fields.eventTheme && <li>{event.fields.eventTheme}</li>}
+        {event.fields.booking && <li>{event.fields.booking}</li>}
       </ul>
     </EventsCard>
   );

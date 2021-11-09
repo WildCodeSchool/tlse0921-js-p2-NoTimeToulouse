@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -18,19 +19,42 @@ const ContactForm = () => {
     resetForm();
   };
 
+  const Title = styled.h2`
+    text-align: center;
+  `;
+
+  const UserCategory = styled.div`
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  `;
+
+  const FormContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+  `;
+
+  const Button = styled.input`
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  `;
   return (
     <form onSubmit="handleSubmit">
-      <h2>Contactez-nous</h2>
-      <div className="social-category">
+      <Title>Contactez-nous</Title>
+      <UserCategory>
         <select type="select">
-          <nom>who are you ?</nom>
-          <libellé>what is your social category ?</libellé>
+          <name>who are you ?</name>
           <option>user</option>
           <option>organiser</option>
           <option>sponsor</option>
         </select>
-      </div>
-      <div className="form-content">
+      </UserCategory>
+      <FormContent>
         <input
           type="text"
           id="name"
@@ -66,9 +90,9 @@ const ContactForm = () => {
           placeholder="message *"
           value={message}
         />
-      </div>
+      </FormContent>
 
-      <input
+      <Button
         className="button"
         type="button"
         value="Envoyer"

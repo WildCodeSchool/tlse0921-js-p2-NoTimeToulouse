@@ -59,5 +59,8 @@
       "npm run prettify",
       "npm run lint"
     ]
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

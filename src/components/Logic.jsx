@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import DisplayEvent from './displayEvent';
+import '../index.css';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
@@ -7,7 +9,7 @@ const GetInfos = () => {
   useEffect(() => {
     axios
       .get(
-        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=500&facet=type_de_manifestation',
+        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=400&facet=type_de_manifestation',
       )
       .then((response) => response.data.records)
       // on convertit le nom des variables via un map
@@ -23,9 +25,11 @@ const GetInfos = () => {
           commune: city,
           reservation_site_internet: booking,
           station_metro_tram_a_proximite: access,
-          geo_point: geoPoint,
+          geo_point: geoPoint /* [Lat, Long] */,
           tarif_normal: price,
           horaire_debut: startHour,
+          lieu_adresse_2: adress,
+          code_postal: zipCode,
         } = e.fields;
         return {
           // destructuration de l'objet que l'on reçoit
@@ -45,6 +49,8 @@ const GetInfos = () => {
             // geopoint[latitude, longitude]
             price,
             startHour,
+            adress,
+            zipCode,
           },
         };
       }))
@@ -56,6 +62,7 @@ const GetInfos = () => {
   return (
     <div>
       <h2>Liste événements triés</h2>
+      <DisplayEvent events={events} />
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

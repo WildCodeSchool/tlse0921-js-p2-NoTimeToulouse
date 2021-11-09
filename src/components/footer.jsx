@@ -14,15 +14,24 @@ const Footer = () => {
   `;
 
   const Img = styled.img`
-    padding-inline: 20px;
     height: 50px;
     width: 50px;
+
+    @media screen and (min-width: 600px) {
+      padding-inline: 20px;
+    }
   `;
 
   const SocialLink = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    @media screen and (min-width: 600px) {
+      justify-content: center;
+    }
+
+    }
   `;
 
   const Wrapper = styled.section`
@@ -32,6 +41,8 @@ const Footer = () => {
 
   const LegalMention = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
   `;
 
@@ -42,16 +53,21 @@ const Footer = () => {
     justify-content: center;
     align-items: space-evenly;
     width: 100%;
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   `;
 
   const LinkCont = styled.li`
     display: flex;
     flex-direction: column;
+    align-items: center;
   `;
 
   const MadeBy = styled.p`
-    /* display: flex;
-    justify-content: center; */
+    text-align: center;
   `;
 
   return (
@@ -64,6 +80,9 @@ const Footer = () => {
           id="email"
           placeholder="notime@tolouse.fr"
         />
+        <button type="submit" value="Submit">
+          Submit
+        </button>
       </NewsLetter>
       <SocialLink>
         <Img src={facebook} alt="logo facebook">

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from './assets/logo.png';
 
-const Header = () => {
+/* const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Nav>
       <Logo>
@@ -18,19 +19,45 @@ const Header = () => {
         <MenuLink href="events">Évènements</MenuLink>
         <MenuLink href="cards">Carte</MenuLink>
         <MenuLink href="contact">Contact</MenuLink>
-        <MenuLink href="whoarewe">Qui sommes-nous</MenuLink>
+        <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
+      </Menu>
+    </Nav>
+  );
+}; */
+
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <Nav>
+      <Logo>
+        <img src={logo} alt="logo" />
+      </Logo>
+      <Burger onClick={() => setIsOpen(!isOpen)}>
+        <span />
+        <span />
+        <span />
+      </Burger>
+      <Menu isOpen={isOpen}>
+        <MenuLink href="events">Évènements</MenuLink>
+        <MenuLink href="cards">Carte</MenuLink>
+        <MenuLink href="contact">Contact</MenuLink>
+        <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
       </Menu>
     </Nav>
   );
 };
 
-const Nav = styled.div`
+const Nav = styled.nav`
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: black;
+  background-color: pink;
+
+  @media (max-width: 1624px) {
+    display: flex;
+  }
 `;
 
 const Logo = styled.div`
@@ -48,12 +75,12 @@ const Menu = styled.div`
   align-items: center;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1624px) {
     overflow: hidden;
     flex-direction: column;
     width: 100%;
     max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
-    transition: max-height 0.3s ease-in;
+    transition: 0.3s ease-in;
   }
 `;
 
@@ -72,20 +99,20 @@ const MenuLink = styled.a`
   }
 `;
 
-const Hamburger = styled.div`
+const Burger = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
 
   span {
-    height: 2px;
-    width: 25px;
+    height: 8px;
+    width: 45px;
     background: orange;
     margin-bottom: 4px;
     border-radius: 5px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1624px) {
     display: flex;
   }
 `;

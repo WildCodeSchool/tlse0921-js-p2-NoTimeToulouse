@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import DisplayEvent from './displayEvent';
+// import DisplayEvent from './displayEvent';
 import '../index.css';
+import Cards from './Card';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
@@ -62,7 +63,9 @@ const GetInfos = () => {
   return (
     <div>
       <h2>Liste événements triés</h2>
-      <DisplayEvent events={events} />
+      {events.map((event) => (
+        <Cards event={event} />
+      ))}
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

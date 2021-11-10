@@ -1,29 +1,9 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+/* import { Anchor } from 'antd'; */
 import logo from './assets/logo.png';
 
-/* const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <Nav>
-      <Logo>
-        <img src={logo} alt="logo" />
-      </Logo>
-      <Hamburger onCLick={() => setIsOpen(!isOpen)}>
-        <span />
-        <span />
-        <span />
-      </Hamburger>
-      <Menu isOpen={isOpen}>
-        <MenuLink href="events">Évènements</MenuLink>
-        <MenuLink href="cards">Carte</MenuLink>
-        <MenuLink href="contact">Contact</MenuLink>
-        <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
-      </Menu>
-    </Nav>
-  );
-}; */
+/* const { Link } = Anchor; */
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,13 +19,18 @@ const Header = () => {
       </Burger>
       <Menu isOpen={isOpen}>
         <MenuLink href="events">Évènements</MenuLink>
-        <MenuLink href="cards">Carte</MenuLink>
+        <MenuLink href="map">Carte</MenuLink>
         <MenuLink href="contact">Contact</MenuLink>
         <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
       </Menu>
     </Nav>
   );
 };
+
+/* <Anchor>
+        <Link href="#contact" title="Contact" />
+        <Link href="#components-anchor-demo-static" title="Static demo" />
+      </Anchor> */
 
 const Nav = styled.nav`
   padding: 0 2rem;

@@ -2,15 +2,16 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SearchEvents from './tools';
 import '../index.css';
-import Cards from './Card';
+// import Cards from './Card';
 import Filter from './Filter';
+import DisplayEvent from './displayEvent';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     axios
       .get(
-        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=400&facet=type_de_manifestation',
+        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=4&facet=type_de_manifestation',
       )
       .then((response) => response.data.records)
       // on convertit le nom des variables via un map
@@ -73,7 +74,10 @@ const GetInfos = () => {
   return (
     <div>
       {eventsToDisplay.map((event) => (
-        <Cards event={event} />
+        <>
+          {/* <Cards event={event} /> */}
+          <DisplayEvent event={event} />
+        </>
       ))}
       <SearchEvents />
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />

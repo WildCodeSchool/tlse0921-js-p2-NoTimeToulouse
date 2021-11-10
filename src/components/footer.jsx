@@ -11,7 +11,6 @@ const Footer = () => {
     display: flex;
     justify-content: center;
     padding-block: 20px;
-
     input {
       margin-inline: 20px;
     }
@@ -42,7 +41,7 @@ const Wrapper = styled.section`
   /* padding: 4em; */
   background: papayawhip;
 `;
-
+  
   const LegalMention = styled.div`
     display: flex;
     flex-direction: column;
@@ -91,7 +90,6 @@ const Wrapper = styled.section`
       <SocialLink>
         <Img src={facebook} alt="logo facebook">
           {/* <a
-
             href="https://www.facebook.com/WildCodeSchool"
             target="_blank"
             rel="noreferrer"
@@ -157,5 +155,6 @@ const Wrapper = styled.section`
     </Wrapper>
   );
 };
+
 
 export default Footer;

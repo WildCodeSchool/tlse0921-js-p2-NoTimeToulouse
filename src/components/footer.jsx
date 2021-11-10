@@ -5,7 +5,6 @@ import github from './assets/github.png';
 import wcs from './assets/WCS.png';
 import twitter from './assets/twitter.png';
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
 const NewsLetter = styled.form`
   display: flex;
   justify-content: center;
@@ -70,12 +69,12 @@ const MadeBy = styled.p`
 const Footer = () => (
   <Wrapper className="footer">
     <NewsLetter>
-      <label htmlFor="email">inscris toi afin de ne rien louper</label>
+      <p>Inscriptions pour ne rien louper</p>
       <input
         type="email"
         name="email"
         id="email"
-        placeholder="notime@tolouse.fr"
+        placeholder="notime@toulouse.fr"
       />
       <button type="submit" value="Submit">
         Submit
@@ -143,7 +142,7 @@ const Footer = () => (
           </a>
         </LinkCont>
       </ContributionList>
-      <MadeBy>Made with ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
+      <MadeBy>Réalisé avec ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
     </LegalMention>
   </Wrapper>
 );

@@ -1,6 +1,31 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+const Title = styled.h2`
+  text-align: center;
+`;
+
+const UserCategory = styled.div`
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+`;
+
+const FormContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+`;
+
+const Button = styled.input`
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+`;
+
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -19,32 +44,8 @@ const ContactForm = () => {
     resetForm();
   };
 
-  const Title = styled.h2`
-    text-align: center;
-  `;
-
-  const UserCategory = styled.div`
-    width: 60%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  `;
-
-  const FormContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: auto;
-  `;
-
-  const Button = styled.input`
-    width: 60%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  `;
   return (
-    <form onSubmit="handleSubmit">
+    <form>
       <Title>Contactez-nous</Title>
       <UserCategory>
         <select type="select">

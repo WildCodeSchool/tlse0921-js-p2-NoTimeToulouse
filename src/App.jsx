@@ -9,6 +9,7 @@ function App() {
   return (
     <div>
       <Header />
+      <h1>1111</h1>
       <MainContainer>
         <ImgGrid />
         <GetInfos />

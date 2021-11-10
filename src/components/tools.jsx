@@ -14,11 +14,11 @@ const MyInput = styled.input`
   width: 50%;
   padding: 0.3em;
   border-radius: 0.5rem;
-  border: solid #86bbd8 3px;
+  border: solid #f06e96 3px;
   font-size: 20px;
   background-color: whitesmoke;
   &::placeholder {
-    color: #86bbd8;
+    color: #f06e96;
     opacity: 60%;
   }
 `;

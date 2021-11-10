@@ -82,7 +82,7 @@ const Footer = () => {
           type="email"
           name="email"
           id="email"
-          placeholder="notime@tolouse.fr"
+          placeholder="notime@toulouse.fr"
         />
         <button type="submit" value="Submit">
           Submit
@@ -150,8 +150,8 @@ const Footer = () => {
             </a>
           </LinkCont>
         </ContributionList>
-        <MadeBy>Made with ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
-        <MadeBy>Dev session of Wilc Code School 09_2021</MadeBy>
+        <MadeBy>Réalisé ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
+        <MadeBy>session dev 09_2021 de Wild Code School</MadeBy>
       </LegalMention>
     </Wrapper>
   );

@@ -65,6 +65,7 @@ const Div = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 20px;
+  height: 65px;
   @media (min-width: 480px) {
     width: 100%;
     justify-content: space-between;

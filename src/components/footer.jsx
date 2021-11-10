@@ -11,6 +11,10 @@ const Footer = () => {
     display: flex;
     justify-content: center;
     padding-block: 20px;
+
+    input {
+      margin-inline: 20px;
+    }
   `;
 
   const Img = styled.img`
@@ -147,6 +151,7 @@ const Footer = () => {
           </LinkCont>
         </ContributionList>
         <MadeBy>Made with ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
+        <MadeBy>Dev session of Wilc Code School 09_2021</MadeBy>
       </LegalMention>
     </Wrapper>
   );

@@ -32,8 +32,8 @@ const MyWen = styled.img`
 
 export default function SearchEvents({
   searchValue,
-  handleChangeSearch,
-  handleIsChanged,
+  setSearchValue,
+  setSendSearch,
 }) {
   return (
     <SearchDiv>
@@ -41,9 +41,9 @@ export default function SearchEvents({
         type="text"
         placeholder="rechercher"
         value={searchValue}
-        onChange={(e) => handleChangeSearch(e.target.value)}
+        onChange={(e) => setSearchValue(e.target.value)}
       />
-      <MyWen src={wen} type="submit" onClick={() => handleIsChanged(true)} />
+      <MyWen src={wen} type="submit" onClick={() => setSendSearch(true)} />
     </SearchDiv>
   );
 }

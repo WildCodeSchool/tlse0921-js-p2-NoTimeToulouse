@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import SearchEvents from './tools';
+import SearchEvents from './Search';
 import '../index.css';
 import Cards from './Card';
 import Filter from './Filter';
@@ -63,14 +63,16 @@ const GetInfos = () => {
 
   const [filterValue, setFilterValue] = useState('');
   const [eventsToDisplay, setEventsToDisplay] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
+  const [sendSearch, setSendSearch] = useState(false);
   useEffect(() => {
     setEventsToDisplay(
       events.filter(
         (eventsFiltered) => eventsFiltered.fields.eventTheme
-          && eventsFiltered.fields.eventTheme.includes(filterValue),
+          && eventsFiltered.fields.eventTheme.includes(filterValue || searchValue),
       ),
     );
-  }, [filterValue]);
+  }, [filterValue, sendSearch]);
   return (
     <div>
       {eventsToDisplay.map((event) => (
@@ -79,7 +81,11 @@ const GetInfos = () => {
           {/* <DisplayEvent event={event} /> */}
         </>
       ))}
-      <SearchEvents />
+      <SearchEvents
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        setSendSearch={setSendSearch}
+      />
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
     </div>
   );

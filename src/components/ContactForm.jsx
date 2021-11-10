@@ -140,6 +140,7 @@ const Button = styled.input`
   margin-top: 5%;
   background-color: #f06e96;
   border-radius: 10px;
+  font-size: 20px;
 `;
 
 const FormContent = styled.div`

@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import SearchEvents from './tools';
 import '../index.css';
 import Cards from './Card';
 import Filter from './Filter';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
-
   useEffect(() => {
     axios
       .get(
@@ -75,6 +75,7 @@ const GetInfos = () => {
       {eventsToDisplay.map((event) => (
         <Cards event={event} />
       ))}
+      <SearchEvents />
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
     </div>
   );

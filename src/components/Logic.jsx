@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-// import DisplayEvent from './displayEvent';
+import SearchEvents from './tools';
 import '../index.css';
 import Cards from './Card';
+import Filter from './Filter';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
-
   useEffect(() => {
     axios
       .get(
@@ -59,13 +59,24 @@ const GetInfos = () => {
         setEvents(fetchedEvents);
       });
   }, []);
-  console.log(events);
+
+  const [filterValue, setFilterValue] = useState('');
+  const [eventsToDisplay, setEventsToDisplay] = useState([]);
+  useEffect(() => {
+    setEventsToDisplay(
+      events.filter(
+        (eventsFiltered) => eventsFiltered.fields.eventTheme
+          && eventsFiltered.fields.eventTheme.includes(filterValue),
+      ),
+    );
+  }, [filterValue]);
   return (
     <div>
-      <h2>Liste événements triés</h2>
-      {events.map((event) => (
+      {eventsToDisplay.map((event) => (
         <Cards event={event} />
       ))}
+      <SearchEvents />
+      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

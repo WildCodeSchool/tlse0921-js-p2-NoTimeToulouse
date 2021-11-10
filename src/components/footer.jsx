@@ -38,10 +38,10 @@ const Footer = () => {
     }
   `;
 
-  const Wrapper = styled.section`
-    /* padding: 4em; */
-    background: papayawhip;
-  `;
+const Wrapper = styled.section`
+  /* padding: 4em; */
+  background: papayawhip;
+`;
 
   const LegalMention = styled.div`
     display: flex;
@@ -91,28 +91,29 @@ const Footer = () => {
       <SocialLink>
         <Img src={facebook} alt="logo facebook">
           {/* <a
+
             href="https://www.facebook.com/WildCodeSchool"
             target="_blank"
             rel="noreferrer"
             label="Facebook"
           /> */}
-        </Img>
-        <Img src={github} alt="logo gitHub">
-          {/* <a
+      </Img>
+      <Img src={github} alt="logo gitHub">
+        {/* <a
             href="https://github.com/WildCodeSchool/tlse0921-js-p2-NoTimeToulouse"
             target="_blank"
             rel="noreferrer"
           /> */}
-        </Img>
-        <Img src={wcs} alt="logo wild code school">
-          {/* <a
+      </Img>
+      <Img src={wcs} alt="logo wild code school">
+        {/* <a
             href="https://www.wildcodeschool.com/fr-FR/campus/toulouse"
             target="_blank"
             rel="noreferrer"
           /> */}
-        </Img>
-        <Img src={twitter} alt="logo twitter">
-          {/* <a
+      </Img>
+      <Img src={twitter} alt="logo twitter">
+        {/* <a
             href="https://twitter.com/WCS_OC"
             target="_blank"
             rel="noreferrer"

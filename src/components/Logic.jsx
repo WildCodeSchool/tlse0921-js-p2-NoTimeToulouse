@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SearchEvents from './tools';
 import '../index.css';
-// import Cards from './Card';
+import Cards from './Card';
 import Filter from './Filter';
-import DisplayEvent from './displayEvent';
+// import DisplayEvent from './displayEvent';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
@@ -75,8 +75,8 @@ const GetInfos = () => {
     <div>
       {eventsToDisplay.map((event) => (
         <>
-          {/* <Cards event={event} /> */}
-          <DisplayEvent event={event} />
+          <Cards event={event} />
+          {/* <DisplayEvent event={event} /> */}
         </>
       ))}
       <SearchEvents />

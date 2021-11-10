@@ -1,13 +1,16 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SearchEvents from './tools';
+import '../index.css';
+import Cards from './Card';
+import Filter from './Filter';
 
 const GetInfos = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     axios
       .get(
-        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=500&facet=type_de_manifestation',
+        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=400&facet=type_de_manifestation',
       )
       .then((response) => response.data.records)
       // on convertit le nom des variables via un map
@@ -23,9 +26,11 @@ const GetInfos = () => {
           commune: city,
           reservation_site_internet: booking,
           station_metro_tram_a_proximite: access,
-          geo_point: geoPoint,
+          geo_point: geoPoint /* [Lat, Long] */,
           tarif_normal: price,
           horaire_debut: startHour,
+          lieu_adresse_2: adress,
+          code_postal: zipCode,
         } = e.fields;
         return {
           // destructuration de l'objet que l'on reçoit
@@ -45,6 +50,8 @@ const GetInfos = () => {
             // geopoint[latitude, longitude]
             price,
             startHour,
+            adress,
+            zipCode,
           },
         };
       }))
@@ -53,22 +60,23 @@ const GetInfos = () => {
       });
   }, []);
 
-  const [searchValue, setSearchValue] = useState('');
-  const [sendSearch, setSendSearch] = useState(false);
+  const [filterValue, setFilterValue] = useState('');
+  const [eventsToDisplay, setEventsToDisplay] = useState([]);
   useEffect(() => {
-    console.log(searchValue);
-  }, [sendSearch]);
-
-  console.log(events);
+    setEventsToDisplay(
+      events.filter(
+        (eventsFiltered) => eventsFiltered.fields.eventTheme
+          && eventsFiltered.fields.eventTheme.includes(filterValue),
+      ),
+    );
+  }, [filterValue]);
   return (
     <div>
-      <h2>Liste événements triés</h2>
-      <SearchEvents
-        searchValue={searchValue}
-        handleChangeSearch={setSearchValue}
-        isSend={sendSearch}
-        handleIsChanged={setSendSearch}
-      />
+      {eventsToDisplay.map((event) => (
+        <Cards event={event} />
+      ))}
+      <SearchEvents />
+      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

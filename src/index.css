@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+p {
+  display: block;
+  color: black;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+}
+.leaflet-container {
+  height: 300px;
+  width: 100%;
+}
+/* Display Event */
+.sampleEvent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.describeEvent {
+  display: flex;
+  flex-direction: row;
+}
+
+.longDescription {
+  text-align: justify;
+}
+
+.infoEvent {
+  display: flex;
+  flex-direction: row;
+}
+
+.tagCategories ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly;
+}

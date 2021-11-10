@@ -3,7 +3,7 @@ import Location from './Location';
 import '../index.css';
 
 const DisplayEvent = ({ events }) => (
-  <div className="sampleEvent">
+  <div id="event" className="sampleEvent">
     {events.map((event) => (
       <div>
         <h1>{event.fields.name}</h1>

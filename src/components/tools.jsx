@@ -1,5 +1,6 @@
 // Fichier pour les outils que l'on va utiliser dans le projet et que l'on peut externaliser
 import styled from 'styled-components';
+import wen from './assets/search-solid.svg';
 
 const SearchDiv = styled.div`
   width: 100%;
@@ -15,10 +16,17 @@ const MyInput = styled.input`
   border-radius: 0.5rem;
   font-size: 20px;
 `;
-const SearchButton = styled.button`
+// const SearchButton = styled.span`
+//   position: absolute;
+//   height: 50%;
+//   width: 10%;
+//   right: 0;
+//   background-color: blue;
+// `;
+const MyWen = styled.img`
   position: absolute;
-  height: 50%;
-  right: 0;
+  width: 5%;
+  right: 25%;
 `;
 
 export default function SearchEvents({
@@ -34,9 +42,7 @@ export default function SearchEvents({
         value={searchValue}
         onChange={(e) => handleChangeSearch(e.target.value)}
       />
-      <SearchButton type="submit" onClick={() => handleIsChanged(true)}>
-        Search
-      </SearchButton>
+      <MyWen src={wen} type="submit" onClick={() => handleIsChanged(true)} />
     </SearchDiv>
   );
 }

@@ -22,16 +22,14 @@ const Img = styled.img`
 `;
 
 const SocialLink = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 
-    @media screen and (min-width: 600px) {
-      justify-content: center;
-    }
-
-    }
-  `;
+  @media screen and (min-width: 600px) {
+    justify-content: center;
+  }
+`;
 
 const Wrapper = styled.section`
   /* padding: 4em; */

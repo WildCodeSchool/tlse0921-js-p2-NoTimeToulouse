@@ -5,63 +5,91 @@ import github from './assets/github.png';
 import wcs from './assets/WCS.png';
 import twitter from './assets/twitter.png';
 
-const NewsLetter = styled.form`
-  display: flex;
-  justify-content: center;
-  padding-block: 20px;
-`;
+/* eslint-disable jsx-a11y/label-has-associated-control */
+const Footer = () => {
+  const NewsLetter = styled.form`
+    display: flex;
+    justify-content: center;
+    padding-block: 20px;
+    input {
+      margin-inline: 20px;
+    }
+  `;
 
-const Img = styled.img`
-  padding-inline: 20px;
-  height: 50px;
-  width: 50px;
-`;
+  const Img = styled.img`
+    height: 50px;
+    width: 50px;
 
-const SocialLink = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
+    @media screen and (min-width: 600px) {
+      padding-inline: 20px;
+    }
+  `;
+
+  const SocialLink = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @media screen and (min-width: 600px) {
+      justify-content: center;
+    }
+
+    }
+  `;
 
 const Wrapper = styled.section`
   /* padding: 4em; */
   background: papayawhip;
 `;
+  
+  const LegalMention = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  `;
 
-const LegalMention = styled.div`
-  display: flex;
-  width: 100%;
-`;
+  const ContributionList = styled.ul`
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-evenly;
+    width: 100%;
 
-const ContributionList = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-evenly;
-  width: 100%;
-`;
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  `;
 
-const LinkCont = styled.li`
-  display: flex;
-  flex-direction: column;
-`;
+  const LinkCont = styled.li`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `;
 
-const MadeBy = styled.div``;
-const Footer = () => (
-  <Wrapper className="footer">
-    <p>Inscriptions pour ne rien louper</p>
-    <NewsLetter>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="notime@tolouse.fr"
-      />
-    </NewsLetter>
-    <SocialLink>
-      <Img src={facebook} alt="logo facebook">
-        {/* <a
+  const MadeBy = styled.p`
+    text-align: center;
+  `;
+
+  return (
+    <Wrapper className="footer">
+      <NewsLetter>
+        <label htmlFor="email">inscris toi afin de ne rien louper</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="notime@toulouse.fr"
+        />
+        <button type="submit" value="Submit">
+          Submit
+        </button>
+      </NewsLetter>
+      <SocialLink>
+        <Img src={facebook} alt="logo facebook">
+          {/* <a
             href="https://www.facebook.com/WildCodeSchool"
             target="_blank"
             rel="noreferrer"
@@ -88,42 +116,45 @@ const Footer = () => (
             target="_blank"
             rel="noreferrer"
           /> */}
-      </Img>
-    </SocialLink>
-    <LegalMention>
-      <ContributionList>
-        Realised with:
-        <LinkCont>
-          <a
-            href="https://styled-components.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Styled components
-          </a>
-        </LinkCont>
-        <LinkCont>
-          <a
-            href="https://react-leaflet.js.org/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            React Leaflet
-          </a>
-        </LinkCont>
-        <LinkCont>
-          <a
-            href="https://data.toulouse-metropole.fr/pages/accueilv3/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            API de Toulouse métropole
-          </a>
-        </LinkCont>
-      </ContributionList>
-      <MadeBy>Made with ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
-    </LegalMention>
-  </Wrapper>
-);
+        </Img>
+      </SocialLink>
+      <LegalMention>
+        <ContributionList>
+          Realised with:
+          <LinkCont>
+            <a
+              href="https://styled-components.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Styled components
+            </a>
+          </LinkCont>
+          <LinkCont>
+            <a
+              href="https://react-leaflet.js.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              React Leaflet
+            </a>
+          </LinkCont>
+          <LinkCont>
+            <a
+              href="https://data.toulouse-metropole.fr/pages/accueilv3/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              API de Toulouse métropole
+            </a>
+          </LinkCont>
+        </ContributionList>
+        <MadeBy>Réalisé ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
+        <MadeBy>session dev 09_2021 de Wild Code School</MadeBy>
+      </LegalMention>
+    </Wrapper>
+  );
+};
+
 
 export default Footer;

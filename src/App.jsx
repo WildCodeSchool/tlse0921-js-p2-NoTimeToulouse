@@ -8,10 +8,10 @@ function App() {
   return (
     <div>
       <Header />
-      <GetInfos />
       <ImgGrid />
-      <Footer />
+      <GetInfos />
       <Form />
+      <Footer />
     </div>
   );
 }

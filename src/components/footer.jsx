@@ -12,15 +12,22 @@ const NewsLetter = styled.form`
 `;
 
 const Img = styled.img`
-  padding-inline: 20px;
   height: 50px;
   width: 50px;
+
+  @media screen and (min-width: 600px) {
+    padding-inline: 20px;
+  }
 `;
 
 const SocialLink = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+
+  @media screen and (min-width: 600px) {
+    justify-content: center;
+  }
 `;
 
 const Wrapper = styled.section`
@@ -30,6 +37,8 @@ const Wrapper = styled.section`
 
 const LegalMention = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 `;
 
@@ -40,24 +49,36 @@ const ContributionList = styled.ul`
   justify-content: center;
   align-items: space-evenly;
   width: 100%;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 `;
 
 const LinkCont = styled.li`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
-const MadeBy = styled.div``;
+const MadeBy = styled.p`
+  text-align: center;
+`;
+
 const Footer = () => (
   <Wrapper className="footer">
-    <p>Inscriptions pour ne rien louper</p>
     <NewsLetter>
+      <p>Inscriptions pour ne rien louper</p>
       <input
         type="email"
         name="email"
         id="email"
-        placeholder="notime@tolouse.fr"
+        placeholder="notime@toulouse.fr"
       />
+      <button type="submit" value="Submit">
+        Submit
+      </button>
     </NewsLetter>
     <SocialLink>
       <Img src={facebook} alt="logo facebook">
@@ -121,7 +142,7 @@ const Footer = () => (
           </a>
         </LinkCont>
       </ContributionList>
-      <MadeBy>Made with ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
+      <MadeBy>Réalisé avec ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
     </LegalMention>
   </Wrapper>
 );

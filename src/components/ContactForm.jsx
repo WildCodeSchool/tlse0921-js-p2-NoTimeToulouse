@@ -1,6 +1,64 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+const Title = styled.h2`
+  text-align: center;
+  font-size: 2em;
+`;
+
+const UserCategory = styled.div`
+  width: 20%;
+
+  select {
+    background-color: #fff3f0;
+    border-radius: 10px;
+  }
+`;
+
+const Form = styled.form`
+  margin-top: 25%;
+  padding: 1em;
+  background-color: #86bbd8;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const FormContent = styled.div`
+  width: 100%;
+  Label {
+    margin-top: 1.5em;
+  }
+
+  input {
+    margin-top: 5px;
+    width: 80%;
+    border: 0;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  textarea {
+    margin-top: 5px;
+    width: 80%;
+    height: 150px;
+    border: 0;
+    border-radius: 5px;
+  }
+`;
+const Button = styled.input`
+  width: 80%;
+  height: 50px;
+  margin-top: 1em;
+  background-color: #f06e96;
+  border-radius: 10px;
+  font-size: 20px;
+  &:hover {
+    background-color: #f06e96;
+  }
+`;
+
 const ContactForm = () => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
@@ -26,7 +84,7 @@ const ContactForm = () => {
       <Title>Contactez-nous</Title>
       <UserCategory>
         <select type="select">
-          <name>who are you ?</name>
+          <name>Qui êtes vous ?</name>
           <option>Spectateur</option>
           <option>Organisateur</option>
           <option>Sponsor</option>
@@ -99,71 +157,5 @@ const ContactForm = () => {
     </Form>
   );
 };
-
-const Title = styled.h2`
-  text-align: center;
-  font-size: 25px;
-  text-transform: uppercase;
-  margin: 0;
-`;
-
-const UserCategory = styled.div`
-  width: 45px;
-  height: 50px;
-  display: flex;
-  justify-content: flex-start;
-
-  select {
-    background-color: #fff3f0;
-    border-radius: 10px;
-  }
-`;
-
-const Form = styled.form`
-  margin-top: 25%;
-  margin-left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #86bbd8;
-  padding: 50px;
-  border-radius: 15px;
-  width: 50%;
-  height: 50%;
-  text-align: center;
-`;
-
-const Button = styled.input`
-  width: 60%;
-  height: 50px;
-  margin: auto;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 5%;
-  background-color: #f06e96;
-  border-radius: 10px;
-  font-size: 20px;
-`;
-
-const FormContent = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  Label {
-    margin-top: 1.5%;
-  }
-
-  input {
-    margin-top: 5px;
-    width: 80%;
-    height: 40px;
-    border-radius: 5px 10px 0 5px;
-  }
-
-  textarea {
-    margin-top: 5px;
-    width: 80%;
-    height: 150px;
-    border-radius: 5px 10px 0 5px;
-  }
-`;
 
 export default ContactForm;

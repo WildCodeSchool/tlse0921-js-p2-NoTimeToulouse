@@ -10,7 +10,7 @@ const ContainerCards = styled.div`
   font-size: 12px;
 `;
 const EventCard = styled.div`
-  box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.66);
+  box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   margin-top: 2em;
   width: 95%;
@@ -40,12 +40,16 @@ const ButtonOpenEvent = styled.button`
   padding: 0.5em;
   height: 50%;
   font-size: 1em;
+  border: 2px solid var(--important-color);
+  border-radius: 5px;
+  color: var(--light-color);
+  background-color: var(--important-color);)
 `;
 const CardFooter = styled.div`
   display: flex;
   font-size: 0.8em;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 `;
 
 const Card = ({ eventsToDisplay }) => (

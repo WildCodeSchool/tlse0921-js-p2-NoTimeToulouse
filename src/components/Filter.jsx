@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 // fonction filter qui sera activé dans des boutons avec des noms de tags//
-function Filter({ filterValue, setFilterValue }) {
+function Filter({ setFilterValue }) {
   const [filteredCinema, setFilterCinema] = useState(false);
   const [filteredMusique, setFilterMusique] = useState(false);
   const [filteredExposition, setFilterExposition] = useState(false);
   const [filteredFoire, setFilterFoire] = useState(false);
-  console.log(filterValue);
 
   function handleFilterCinema() {
     setFilterCinema(!filteredCinema);

@@ -81,13 +81,13 @@ const GetInfos = () => {
   }, [filterValue, sendSearch]);
   return (
     <div>
-      <Cards eventsToDisplay={eventsToDisplay} />
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <SearchEvents
         searchValue={searchValue}
         setSearchValue={setSearchValue}
         setSendSearch={setSendSearch}
       />
+      <Cards eventsToDisplay={eventsToDisplay} />
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

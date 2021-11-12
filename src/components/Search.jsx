@@ -28,6 +28,7 @@ const MyWen = styled.img`
   right: 25%;
   filter: invert(100%) sepia(100%) saturate(200%) hue-rotate(100deg)
     brightness(100%) contrast(60%);
+  cursor: pointer;
 `;
 
 export default function SearchEvents({

@@ -8,11 +8,7 @@ const Title = styled.h2`
 
 const UserCategory = styled.div`
   width: 20%;
-
-  select {
-    background-color: #fff3f0;
-    border-radius: 10px;
-  }
+  align-self: flex-start;
 `;
 
 const Form = styled.form`
@@ -27,13 +23,17 @@ const Form = styled.form`
 
 const FormContent = styled.div`
   width: 100%;
-  Label {
-    margin-top: 1.5em;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  label {
+    margin-top: 1.5em;
+    width: 80%;
+  }
   input {
     margin-top: 5px;
-    width: 80%;
+    width: 100%;
     border: 0;
     height: 40px;
     border-radius: 5px;
@@ -41,7 +41,7 @@ const FormContent = styled.div`
 
   textarea {
     margin-top: 5px;
-    width: 80%;
+    width: 100%;
     height: 150px;
     border: 0;
     border-radius: 5px;
@@ -52,7 +52,8 @@ const Button = styled.input`
   height: 50px;
   margin-top: 1em;
   background-color: #f06e96;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 0;
   font-size: 20px;
   &:hover {
     background-color: #f06e96;
@@ -138,7 +139,7 @@ const ContactForm = () => {
           />
         </label>
         <label htmlFor="message">
-          Votre message :<br />
+          Votre message :
           <textarea
             id="message"
             name="message"

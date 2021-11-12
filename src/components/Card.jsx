@@ -9,22 +9,25 @@ const ContainerCards = styled.div`
   justify-content: space-between;
   font-size: 12px;
 `;
-const MainContainer = styled.div`
-  width: 60%;
-  padding: 0.5em;
-`;
-const ImgEvent = styled.div`
-  width: 30%;
-  height: 150px;
-  background-color: lightgreen;
-`;
 const EventCard = styled.div`
-  border: 1px solid #f06e96;
+  box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
   margin-top: 2em;
   width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+const MainContainer = styled.div`
+  width: 63%;
+  font-size: 0.8em;
+  padding: 1em;
+`;
+const ImgEvent = styled.div`
+  width: 30%;
+  height: 150px;
+  border-radius: 10px 0px 0px 10px;
+  background-color: lightgreen;
 `;
 const ListInfoCard = styled.ul`
   list-style-type: none;
@@ -36,9 +39,11 @@ const CardsTitle = styled.h2`
 const ButtonOpenEvent = styled.button`
   padding: 0.5em;
   height: 50%;
+  font-size: 1em;
 `;
 const CardFooter = styled.div`
   display: flex;
+  font-size: 0.8em;
   justify-content: space-between;
   align-items: center;
 `;

@@ -79,10 +79,12 @@ const Menu = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 10;
   flex-direction: column;
   width: 100%;
   max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
   background-color: #f06e96;
+  opacity: 95%;
   overflow: hidden;
   @media (min-width: 500px) {
     overflow: visible;

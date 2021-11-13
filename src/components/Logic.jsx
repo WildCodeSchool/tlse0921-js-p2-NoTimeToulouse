@@ -80,7 +80,7 @@ const GetInfos = () => {
     );
   }, [filterValue, sendSearch]);
   return (
-    <div>
+    <div className="search-container">
       <SearchEvents
         searchValue={searchValue}
         setSearchValue={setSearchValue}

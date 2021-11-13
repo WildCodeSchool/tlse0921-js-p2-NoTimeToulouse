@@ -39,3 +39,7 @@ p {
 .div-search {
   margin: auto;
 }
+
+.search-container {
+  width: 100%;
+}

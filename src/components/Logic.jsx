@@ -81,12 +81,12 @@ const GetInfos = () => {
   }, [filterValue, sendSearch]);
   return (
     <div>
-      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <SearchEvents
         searchValue={searchValue}
         setSearchValue={setSearchValue}
         setSendSearch={setSendSearch}
       />
+      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <Cards eventsToDisplay={eventsToDisplay} />
     </div>
   );

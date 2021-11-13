@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 // fonction filter qui sera activé dans des boutons avec des noms de tags//
+
+const QuickSearchButton = styled.input`
+  width: 20%;
+  height: 50px;
+`;
+const SearchContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+`;
+
 function Filter({ setFilterValue }) {
   const [filteredCinema, setFilterCinema] = useState(false);
   const [filteredMusique, setFilterMusique] = useState(false);
   const [filteredArt, setFilterArt] = useState(false);
   const [filteredSport, setFilterSport] = useState(false);
 
-  function handleFilterCinema() {
+  const handleFilterCinema = () => {
     setFilterCinema(!filteredCinema);
-  }
-  function handleFilterMusique() {
+  };
+  const handleFilterMusique = () => {
     setFilterMusique(!filteredMusique);
-  }
-  function handleFilterArt() {
-    setFilterArt(!filteredArt);
-  }
-  function handleFilterSport() {
+  };
+  const handleFilterSport = () => {
     setFilterSport(!filteredSport);
-  }
+  };
+  const handleFilterArt = () => {
+    setFilterArt(!filteredArt);
+  };
+
   useEffect(() => {
     if (filteredCinema) {
       setFilterValue('Cinéma');
@@ -34,20 +47,24 @@ function Filter({ setFilterValue }) {
   }, [filteredCinema, filteredMusique, filteredArt, filteredSport]);
 
   return (
-    <div>
-      <button type="button" onClick={handleFilterCinema}>
-        Cinéma
-      </button>
-      <button type="button" onClick={handleFilterMusique}>
-        Musique
-      </button>
-      <button type="button" onClick={handleFilterArt}>
-        Art
-      </button>
-      <button type="button" onClick={handleFilterSport}>
-        Sport
-      </button>
-    </div>
+    <SearchContainer>
+      <QuickSearchButton
+        type="button"
+        value="Cinéma"
+        onClick={handleFilterCinema}
+      />
+      <QuickSearchButton
+        type="button"
+        onClick={handleFilterMusique}
+        value="Musique"
+      />
+      <QuickSearchButton type="button" onClick={handleFilterArt} value="Art" />
+      <QuickSearchButton
+        type="button"
+        onClick={handleFilterSport}
+        value="Sport"
+      />
+    </SearchContainer>
   );
 }
 export default Filter;

@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 function Filter({ setFilterValue }) {
   const [filteredCinema, setFilterCinema] = useState(false);
   const [filteredMusique, setFilterMusique] = useState(false);
-  const [filteredExposition, setFilterExposition] = useState(false);
-  const [filteredFoire, setFilterFoire] = useState(false);
+  const [filteredArt, setFilterArt] = useState(false);
+  const [filteredSport, setFilterSport] = useState(false);
 
   function handleFilterCinema() {
     setFilterCinema(!filteredCinema);
@@ -13,25 +13,25 @@ function Filter({ setFilterValue }) {
   function handleFilterMusique() {
     setFilterMusique(!filteredMusique);
   }
-  function handleFilterExposition() {
-    setFilterExposition(!filteredExposition);
+  function handleFilterArt() {
+    setFilterArt(!filteredArt);
   }
-  function handleFilterFoire() {
-    setFilterFoire(!filteredFoire);
+  function handleFilterSport() {
+    setFilterSport(!filteredSport);
   }
   useEffect(() => {
     if (filteredCinema) {
       setFilterValue('Cinéma');
     } else if (filteredMusique) {
       setFilterValue('Musique');
-    } else if (filteredFoire) {
-      setFilterValue('Foire');
-    } else if (filteredExposition) {
-      setFilterValue('Exposition');
+    } else if (filteredSport) {
+      setFilterValue('Sports');
+    } else if (filteredArt) {
+      setFilterValue('Art');
     }
 
     return () => setFilterValue('Impossiblequecelaysoit');
-  }, [filteredCinema, filteredMusique, filteredExposition, filteredFoire]);
+  }, [filteredCinema, filteredMusique, filteredArt, filteredSport]);
 
   return (
     <div>
@@ -41,11 +41,11 @@ function Filter({ setFilterValue }) {
       <button type="button" onClick={handleFilterMusique}>
         Musique
       </button>
-      <button type="button" onClick={handleFilterExposition}>
-        Exposition
+      <button type="button" onClick={handleFilterArt}>
+        Art
       </button>
-      <button type="button" onClick={handleFilterFoire}>
-        Foire et salons
+      <button type="button" onClick={handleFilterSport}>
+        Sport
       </button>
     </div>
   );

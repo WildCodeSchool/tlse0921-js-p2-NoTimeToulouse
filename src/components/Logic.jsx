@@ -2,8 +2,10 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SearchEvents from './Search';
 import '../index.css';
-import Cards from './Card';
+import Card from './Card';
 import Filter from './Filter';
+import MosaicButton from './DisplayLineToMosaic';
+
 // import DisplayEvent from './displayEvent';
 
 const GetInfos = () => {
@@ -87,7 +89,8 @@ const GetInfos = () => {
         setSearchValue={setSearchValue}
         setSendSearch={setSendSearch}
       />
-      <Cards eventsToDisplay={eventsToDisplay} />
+      <MosaicButton />
+      <Card eventsToDisplay={eventsToDisplay} />
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

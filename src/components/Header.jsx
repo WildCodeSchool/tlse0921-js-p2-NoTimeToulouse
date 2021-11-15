@@ -20,7 +20,6 @@ const Header = () => {
       </Div>
       <Menu isOpen={isOpen}>
         <MenuLink href="events">Évènements</MenuLink>
-        <MenuLink href="map">Carte</MenuLink>
         <MenuLink href="contact">Contact</MenuLink>
         <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
       </Menu>

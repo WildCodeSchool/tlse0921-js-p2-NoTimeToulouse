@@ -11,15 +11,27 @@ function Filter({ setFilterValue }) {
 
   const handleFilterCinema = () => {
     setFilterCinema(!filteredCinema);
+    setFilterMusique(false);
+    setFilterSport(false);
+    setFilterArt(false);
   };
   const handleFilterMusique = () => {
     setFilterMusique(!filteredMusique);
+    setFilterCinema(false);
+    setFilterSport(false);
+    setFilterArt(false);
   };
   const handleFilterSport = () => {
     setFilterSport(!filteredSport);
+    setFilterCinema(false);
+    setFilterArt(false);
+    setFilterMusique(false);
   };
   const handleFilterArt = () => {
     setFilterArt(!filteredArt);
+    setFilterCinema(false);
+    setFilterMusique(false);
+    setFilterSport(false);
   };
 
   useEffect(() => {

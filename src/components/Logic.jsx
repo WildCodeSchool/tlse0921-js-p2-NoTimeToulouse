@@ -11,7 +11,7 @@ const GetInfos = () => {
   useEffect(() => {
     axios
       .get(
-        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=10&facet=type_de_manifestation',
+        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=400&facet=type_de_manifestation',
       )
       .then((response) => response.data.records)
       // on convertit le nom des variables via un map
@@ -80,13 +80,13 @@ const GetInfos = () => {
     );
   }, [filterValue, sendSearch]);
   return (
-    <div>
-      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
+    <div className="search-container">
       <SearchEvents
         searchValue={searchValue}
         setSearchValue={setSearchValue}
         setSendSearch={setSendSearch}
       />
+      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <Cards eventsToDisplay={eventsToDisplay} />
     </div>
   );

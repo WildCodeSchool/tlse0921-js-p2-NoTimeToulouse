@@ -2,28 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import logo from './assets/logoTransparent.png';
 
-/* const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <Nav>
-      <Logo>
-        <img src={logo} alt="logo" />
-      </Logo>
-      <Hamburger onCLick={() => setIsOpen(!isOpen)}>
-        <span />
-        <span />
-        <span />
-      </Hamburger>
-      <Menu isOpen={isOpen}>
-        <MenuLink href="events">Évènements</MenuLink>
-        <MenuLink href="cards">Carte</MenuLink>
-        <MenuLink href="contact">Contact</MenuLink>
-        <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
-      </Menu>
-    </Nav>
-  );
-}; */
+/* const { Link } = Anchor; */
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,11 +21,18 @@ const Header = () => {
       <Menu isOpen={isOpen}>
         <MenuLink href="events">Évènements</MenuLink>
         <MenuLink href="cards">Carte</MenuLink>
+        <MenuLink href="map">Carte</MenuLink>
+        <MenuLink href="contact">Contact</MenuLink>
         <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
       </Menu>
     </Nav>
   );
 };
+
+/* <Anchor>
+        <Link href="#contact" title="Contact" />
+        <Link href="#components-anchor-demo-static" title="Static demo" />
+      </Anchor> */
 
 const Nav = styled.nav`
   display: flex;

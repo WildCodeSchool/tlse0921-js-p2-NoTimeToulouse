@@ -20,7 +20,6 @@ const Header = () => {
       </Div>
       <Menu isOpen={isOpen}>
         <MenuLink href="events">Évènements</MenuLink>
-        <MenuLink href="cards">Carte</MenuLink>
         <MenuLink href="map">Carte</MenuLink>
         <MenuLink href="contact">Contact</MenuLink>
         <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
@@ -43,8 +42,10 @@ const Nav = styled.nav`
   background-color: #f06e96;
   height: 70px;
   @media (min-width: 480px) {
-    height: 100px;
+    height: 90px;
   }
+  @media (min-width: 1000px) {
+    height: 100px;
 `;
 
 const Div = styled.div`
@@ -59,19 +60,22 @@ const Div = styled.div`
 `;
 
 const Logo = styled.div`
-  height: 20%;
+  height: 30%;
   img {
-    width: 20%;
+    width: 25%;
+    margin-top: -10px;
     height: auto;
   }
   @media (min-width: 480px) {
+    img {
+      width: 28%;
+      margin-top: -18px;
+    }
   }
   @media (min-width: 1000px) {
-    height: 30%;
-    margin-top: -30px;
     img {
-      width: 25%;
-      height: auto;
+      width: 30%;
+      margin-top: -47px;
     }
   }
 `;
@@ -86,7 +90,8 @@ const Menu = styled.div`
   max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
   background-color: #f06e96;
   overflow: hidden;
-  @media (min-width: 500px) {
+  z-index: 1;
+  @media (min-width: 1000px) {
     overflow: visible;
     flex-direction: row;
     justify-content: flex-end;
@@ -130,7 +135,7 @@ const Burger = styled.div`
     border-radius: 5px;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 1000px) {
     display: none;
   }
 `;

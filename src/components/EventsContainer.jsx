@@ -2,14 +2,10 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SearchEvents from './Search';
 import '../index.css';
-import Card from './Card';
+import Cards from './Card';
 import Filter from './Filter';
-import MosaicButton from './DisplayLineToMosaic';
-import CardMosaic from './CardMosaic';
 
-// import DisplayEvent from './displayEvent';
-
-const GetInfos = () => {
+const EventsContainer = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     axios
@@ -82,11 +78,6 @@ const GetInfos = () => {
       ),
     );
   }, [filterValue, sendSearch]);
-
-  const [toMosaic, setToMosaic] = useState(false);
-  function handleDisplayClick() {
-    setToMosaic(!toMosaic);
-  }
   return (
     <div className="search-container">
       <SearchEvents
@@ -94,17 +85,10 @@ const GetInfos = () => {
         setSearchValue={setSearchValue}
         setSendSearch={setSendSearch}
       />
-      <MosaicButton
-        toMosaic={toMosaic}
-        handleDisplayClick={() => handleDisplayClick()}
-      />
-      {toMosaic ? <CardMosaic eventsToDisplay={eventsToDisplay} /> : null}
-      {toMosaic ? null : <Card eventsToDisplay={eventsToDisplay} />}
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
-      <Card eventsToDisplay={eventsToDisplay} />
+      <Cards eventsToDisplay={eventsToDisplay} />
     </div>
   );
-  // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut
 };
 
-export default GetInfos;
+export default EventsContainer;

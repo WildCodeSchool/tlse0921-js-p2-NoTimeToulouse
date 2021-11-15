@@ -1,5 +1,10 @@
 :root {
   font-size: 16px;
+  --principal-color: #86bbd8;
+  --secondary-color: #ff9f1c;
+  --light-color: #fff3f0;
+  --dark-color: #0e131f;
+  --important-color: #f06e96;
 }
 
 body {
@@ -19,7 +24,7 @@ code {
 
 p {
   display: block;
-  color: black;
+  color: var(--dark-color);
 }
 
 #map {
@@ -33,4 +38,8 @@ p {
 
 .div-search {
   margin: auto;
+}
+
+.search-container {
+  width: 100%;
 }

@@ -13,7 +13,7 @@ const UserCategory = styled.div`
 
 const Form = styled.form`
   margin-top: 25%;
-  padding: 1em;
+  padding-bottom: 1em;
   background-color: #86bbd8;
   width: 100%;
   display: flex;

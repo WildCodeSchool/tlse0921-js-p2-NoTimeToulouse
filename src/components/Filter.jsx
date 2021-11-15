@@ -30,21 +30,23 @@ function Filter({ filterValue, setFilterValue }) {
     } else if (filteredExposition) {
       setFilterValue('Exposition');
     }
+
+    return () => setFilterValue('Impossiblequecelaysoit');
   }, [filteredCinema, filteredMusique, filteredExposition, filteredFoire]);
 
   return (
     <div>
       <button type="button" onClick={handleFilterCinema}>
-        Cinéma {filteredCinema ? 'ON' : 'OFF'}
+        Cinéma
       </button>
       <button type="button" onClick={handleFilterMusique}>
-        Musique {filteredMusique ? 'ON' : 'OFF'}
+        Musique
       </button>
       <button type="button" onClick={handleFilterExposition}>
-        Exposition {filteredExposition ? 'ON' : 'OFF'}
+        Exposition
       </button>
       <button type="button" onClick={handleFilterFoire}>
-        Foire et salons {filteredFoire ? 'ON' : 'OFF'}
+        Foire et salons
       </button>
     </div>
   );

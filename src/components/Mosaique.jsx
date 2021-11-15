@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import paintPicture from './Datas';
 
 const ImgContainer = styled.div`
-  width: 80%;
-  height: 70vh;
+  width: 90%;
+  height: 50vh;
   margin: auto;
   display: flex;
   justify-content: space-between;

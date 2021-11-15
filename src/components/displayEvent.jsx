@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Location from './Location';
 import '../index.css';
 
-
 const SampleEvent = styled.div`
   display: flex;
   flex-direction: column;
@@ -104,7 +103,6 @@ const DisplayEvent = ({ event }) => (
       </Button>
     </DetailEvent>
   </SampleEvent>
-
 );
 
 export default DisplayEvent;

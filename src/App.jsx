@@ -3,14 +3,17 @@ import Footer from './components/footer';
 import GetInfos from './components/Logic';
 import ImgGrid from './components/Mosaique';
 import Form from './components/ContactForm';
+import MainContainer from './components/style/content';
 
 function App() {
   return (
     <div>
       <Header />
-      <ImgGrid />
-      <GetInfos />
-      <Form />
+      <MainContainer>
+        <ImgGrid />
+        <GetInfos />
+        <Form />
+      </MainContainer>
       <Footer />
     </div>
   );

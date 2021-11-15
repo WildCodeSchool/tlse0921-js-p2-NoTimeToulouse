@@ -1,5 +1,15 @@
+:root {
+  font-size: 16px;
+  --principal-color: #86bbd8;
+  --secondary-color: #ff9f1c;
+  --light-color: #fff3f0;
+  --dark-color: #0e131f;
+  --important-color: #f06e96;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,5 +24,22 @@ code {
 
 p {
   display: block;
-  color:  black;
+  color: var(--dark-color);
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+}
+.leaflet-container {
+  height: 300px;
+  width: 100%;
+}
+
+.div-search {
+  margin: auto;
+}
+
+.search-container {
+  width: 100%;
 }

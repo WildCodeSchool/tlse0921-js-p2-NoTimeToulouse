@@ -7,8 +7,22 @@ const Title = styled.h2`
 `;
 
 const UserCategory = styled.div`
-  width: 20%;
-  align-self: flex-start;
+  padding: auto;
+  align-self: center;
+
+  select {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  option {
+    text-align: center;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+  }
 `;
 
 const Form = styled.form`
@@ -19,6 +33,9 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (min-width: 480px) {
+    width: 50%;
+  }
 `;
 
 const FormContent = styled.div`

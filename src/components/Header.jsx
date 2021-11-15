@@ -79,8 +79,10 @@ const Logo = styled.div`
     height: auto;
   }
   @media (min-width: 480px) {
+  }
+  @media (min-width: 1000px) {
     height: 30%;
-    margin-top: -10px;
+    margin-top: -30px;
     img {
       width: 25%;
       height: auto;
@@ -115,7 +117,7 @@ const MenuLink = styled.a`
   color: #0e131f;
   text-transform: uppercase;
   transition: all 0.3 ease-in;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: bold;
   &:hover {
     color: #fff3f0;

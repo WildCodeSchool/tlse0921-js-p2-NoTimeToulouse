@@ -5,6 +5,7 @@ import '../index.css';
 import Card from './Card';
 import Filter from './Filter';
 import MosaicButton from './DisplayLineToMosaic';
+import CardMosaic from './CardMosaic';
 
 // import DisplayEvent from './displayEvent';
 
@@ -81,6 +82,11 @@ const GetInfos = () => {
       ),
     );
   }, [filterValue, sendSearch]);
+
+  const [toMosaic, setToMosaic] = useState(false);
+  function handleDisplayClick() {
+    setToMosaic(!toMosaic);
+  }
   return (
     <div>
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
@@ -89,8 +95,12 @@ const GetInfos = () => {
         setSearchValue={setSearchValue}
         setSendSearch={setSendSearch}
       />
-      <MosaicButton />
-      <Card eventsToDisplay={eventsToDisplay} />
+      <MosaicButton
+        toMosaic={toMosaic}
+        handleDisplayClick={() => handleDisplayClick()}
+      />
+      {toMosaic ? <CardMosaic eventsToDisplay={eventsToDisplay} /> : null}
+      {toMosaic ? null : <Card eventsToDisplay={eventsToDisplay} />}
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

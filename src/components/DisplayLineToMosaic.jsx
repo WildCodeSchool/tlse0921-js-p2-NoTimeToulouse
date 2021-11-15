@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const MosaicButton = () => {
-  const [toMosaic, setToMosaic] = useState(false);
-
-  function handleDisplayClick() {
-    setToMosaic(!toMosaic);
-  }
-
+const MosaicButton = (props) => {
+  const { toMosaic, handleDisplayClick } = props;
   return (
     <div>
       <button type="button" onClick={handleDisplayClick}>

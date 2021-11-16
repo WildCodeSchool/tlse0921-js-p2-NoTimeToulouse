@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import fetchApiUnsplash from '../../images/FetchApiUnsplash';
+import fetchApiUnsplash from '../../api/FetchApiUnsplash';
 
 const ImgContainer = styled.div`
   width: 90%;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-const useFetchTheme = (url) => {
+const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -22,4 +22,4 @@ const useFetchTheme = (url) => {
   return { data, error, isLoading };
 };
 
-export default useFetchTheme;
+export default useFetch;

@@ -1,7 +1,7 @@
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
-import '../index.css';
+import '../../../index.css';
 
 const Location = ({ marker, adress }) => {
   let position = [];

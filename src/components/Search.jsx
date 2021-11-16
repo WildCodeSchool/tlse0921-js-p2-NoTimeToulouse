@@ -1,6 +1,6 @@
 // Fichier pour les outils que l'on va utiliser dans le projet et que l'on peut externaliser
 import styled from 'styled-components';
-import wen from './assets/search-solid.svg';
+import wen from '../assets/search-solid.svg';
 
 const SearchDiv = styled.div`
   width: 100%;

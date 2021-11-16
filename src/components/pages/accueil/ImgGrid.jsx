@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import { useState, useEffect } from 'react';
 // import axios from 'axios';
-import paintPicture from './Datas';
+import paintPicture from '../../Datas';
 
 const ImgContainer = styled.div`
   width: 90%;
@@ -56,20 +56,6 @@ const InfosImg = styled.div`
 `;
 
 const ImgGrid = () => (
-  // const [pictures, setPictures] = useState([]);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       'https://api.unsplash.com/search/photos?query=peinture&client_id=cv-qpRxao8VaEyXIgyhc9nU4c7x38nuqEeVOjmDXlc0',
-  //     )
-  //     .then((response) => response.data)
-  //     .then((fetchedPictures) => setPictures(fetchedPictures.results));
-  // }, []);
-
-  // const numberRand = Math.floor(Math.random() * 10);
-  // console.log(numberRand);
-
   <ImgContainer>
     <LeftContainer>
       <Myimg

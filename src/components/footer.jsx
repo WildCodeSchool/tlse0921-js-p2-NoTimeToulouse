@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import styled from 'styled-components';
 import facebook from './assets/facebook.png';
 import github from './assets/github.png';
-import wcs from './assets/WCS.png';
 import twitter from './assets/twitter.png';
 
 const NewsLetter = styled.form`
@@ -36,7 +34,7 @@ const SocialLink = styled.div`
 `;
 
 const Wrapper = styled.section`
-  background: papayawhip;
+  background: var(--important-color);
 `;
 
 const LegalMention = styled.div`
@@ -96,13 +94,6 @@ const Footer = () => (
       <Img src={github} alt="logo gitHub">
         {/* <a
             href="https://github.com/WildCodeSchool/tlse0921-js-p2-NoTimeToulouse"
-            target="_blank"
-            rel="noreferrer"
-          /> */}
-      </Img>
-      <Img src={wcs} alt="logo wild code school">
-        {/* <a
-            href="https://www.wildcodeschool.com/fr-FR/campus/toulouse"
             target="_blank"
             rel="noreferrer"
           /> */}

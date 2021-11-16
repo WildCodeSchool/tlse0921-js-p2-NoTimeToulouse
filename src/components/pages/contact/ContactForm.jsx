@@ -26,7 +26,7 @@ const UserCategory = styled.div`
 `;
 
 const Form = styled.form`
-  margin-top: 25%;
+  margin-top: 0;
   padding-bottom: 1em;
   background-color: #86bbd8;
   width: 100%;

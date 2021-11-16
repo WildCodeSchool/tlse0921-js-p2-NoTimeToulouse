@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-// import { useState, useEffect } from 'react';
-// import axios from 'axios';
-import paintPicture from '../../Datas';
+import fetchApiUnsplash from '../../images/FetchApiUnsplash';
 
 const ImgContainer = styled.div`
   width: 90%;
@@ -55,62 +53,48 @@ const InfosImg = styled.div`
   opacity: 30%;
 `;
 
-const ImgGrid = () => (
-  <ImgContainer>
-    <LeftContainer>
-      <Myimg
-        // src={pictures[2].urls.regular}
-        src={paintPicture.urls.regular}
-        alt="test"
-        links={paintPicture.links}
-      />
-      <InfosImg>
-        <p>Photo by {paintPicture.user.username} on Unsplash</p>
-      </InfosImg>
-    </LeftContainer>
-    <RightContainer>
-      <SmallImg>
-        <Myimg
-          // src={pictures[6].urls.regular}
-          src={paintPicture.urls.regular}
-          alt="image_test"
-        />
+const ImgGrid = () => {
+  const img = {
+    url: fetchApiUnsplash('paint').urlImg,
+    userName: fetchApiUnsplash('paint').userName,
+  };
+
+  return (
+    <ImgContainer>
+      <LeftContainer>
+        <Myimg src={img.url} alt="test" />
         <InfosImg>
-          <p>Photo by {paintPicture.user.username} on Unsplash</p>
+          <p>Photo by {img.userName} on Unsplash</p>
         </InfosImg>
-      </SmallImg>
-      <SmallImg>
-        <Myimg
-          // src={pictures[6].urls.regular}
-          src={paintPicture.urls.regular}
-          alt="image_test"
-        />
-        <InfosImg>
-          <p>Photo by {paintPicture.user.username} on Unsplash</p>
-        </InfosImg>
-      </SmallImg>
-      <SmallImg>
-        <Myimg
-          // src={pictures[6].urls.regular}
-          src={paintPicture.urls.regular}
-          alt="image_test"
-        />
-        <InfosImg>
-          <p>Photo by {paintPicture.user.username} on Unsplash</p>
-        </InfosImg>
-      </SmallImg>
-      <SmallImg>
-        <Myimg
-          // src={pictures[6].urls.regular}
-          src={paintPicture.urls.regular}
-          alt="image_test"
-        />
-        <InfosImg>
-          <p>Photo by {paintPicture.user.username} on Unsplash</p>
-        </InfosImg>
-      </SmallImg>
-    </RightContainer>
-  </ImgContainer>
-);
+      </LeftContainer>
+      <RightContainer>
+        <SmallImg>
+          <Myimg src={img.url} alt="image_test" />
+          <InfosImg>
+            <p>Photo by {img.userName} on Unsplash</p>
+          </InfosImg>
+        </SmallImg>
+        <SmallImg>
+          <Myimg src={img.url} alt="image_test" />
+          <InfosImg>
+            <p>Photo by {img.userName} on Unsplash</p>
+          </InfosImg>
+        </SmallImg>
+        <SmallImg>
+          <Myimg src={img.url} alt="image_test" />
+          <InfosImg>
+            <p>Photo by {img.userName} on Unsplash</p>
+          </InfosImg>
+        </SmallImg>
+        <SmallImg>
+          <Myimg src={img.url} alt="image_test" />
+          <InfosImg>
+            <p>Photo by {img.userName} on Unsplash</p>
+          </InfosImg>
+        </SmallImg>
+      </RightContainer>
+    </ImgContainer>
+  );
+};
 
 export default ImgGrid;

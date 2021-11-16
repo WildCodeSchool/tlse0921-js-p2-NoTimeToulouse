@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SearchEvents from './Search';
 import '../index.css';
-import Card from './Card';
+import Card from './pages/evenements/DisplayEvents';
 import Filter from './Filter';
 import MosaicButton from './DisplayLineToMosaic';
 import CardMosaic from './CardMosaic';

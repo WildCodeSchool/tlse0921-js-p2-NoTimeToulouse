@@ -1,4 +1,4 @@
-import ImgGrid from './ImgGrid';
+import ImgGrid from '../pages/accueil/ImgGrid';
 
 const HomePage = () => (
   <>

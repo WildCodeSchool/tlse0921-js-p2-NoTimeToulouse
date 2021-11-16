@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Location from './Location';
+import Location from './pages/evenements/Location';
 import '../index.css';
 
 const SampleEvent = styled.div`
@@ -60,7 +60,7 @@ const InfoCard = styled.section``;
 const TagCategory = styled.section``;
 const DescribeList = styled.section``;
 
-const DisplayEvent = ({ event }) => (
+const DisplayEventModal = ({ event }) => (
   <SampleEvent>
     <TitleEvent>{event.fields.name}</TitleEvent>
     <DescibeEvent>
@@ -104,4 +104,4 @@ const DisplayEvent = ({ event }) => (
   </SampleEvent>
 );
 
-export default DisplayEvent;
+export default DisplayEventModal;

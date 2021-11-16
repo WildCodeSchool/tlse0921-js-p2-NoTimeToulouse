@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
-import logo from './assets/logoTransparent.png';
-
-/* const { Link } = Anchor; */
+import logo from '../../assets/logoTransparent.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,11 +37,6 @@ const Header = () => {
   );
 };
 
-/* <Anchor>
-        <Link href="#contact" title="Contact" />
-        <Link href="#components-anchor-demo-static" title="Static demo" />
-      </Anchor> */
-
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
@@ -57,6 +50,7 @@ const Nav = styled.nav`
   }
   @media (min-width: 1000px) {
     height: 100px;
+  }
 `;
 
 const Div = styled.div`

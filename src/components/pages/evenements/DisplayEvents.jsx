@@ -52,7 +52,7 @@ const CardFooter = styled.div`
   align-items: end;
 `;
 
-const Card = ({ eventsToDisplay }) => (
+const DisplayEvents = ({ eventsToDisplay }) => (
   <ContainerCards>
     {eventsToDisplay.map((event) => (
       <EventCard>
@@ -80,4 +80,4 @@ const Card = ({ eventsToDisplay }) => (
     ))}
   </ContainerCards>
 );
-export default Card;
+export default DisplayEvents;

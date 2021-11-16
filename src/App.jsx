@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import EventsContainer from './components/EventsContainer';
-import Form from './components/ContactForm';
-import Layout from './components/Layout';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './components/HomePage';
-import MainContainer from './components/style/MainContainer';
+import Form from './components/pages/contact/ContactForm';
+import Layout from './components/architecture/Layout';
+import Header from './components/architecture/Header';
+import Footer from './components/architecture/Footer';
+import HomePage from './components/architecture/HomePage';
+import MainContainer from './style/MainContainer';
 
 function App() {
   return (

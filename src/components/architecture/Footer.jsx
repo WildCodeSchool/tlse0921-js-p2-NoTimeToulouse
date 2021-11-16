@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import facebook from './assets/facebook.png';
-import github from './assets/github.png';
-import twitter from './assets/twitter.png';
+import facebook from '../../assets/facebook.png';
+import github from '../../assets/github.png';
+import twitter from '../../assets/twitter.png';
 
 const NewsLetter = styled.form`
   display: flex;
@@ -83,28 +83,25 @@ const Footer = () => (
       </button>
     </NewsLetter>
     <SocialLink>
-      <Img src={facebook} alt="logo facebook">
-        {/* <a
-            href="https://www.facebook.com/WildCodeSchool"
-            target="_blank"
-            rel="noreferrer"
-            label="Facebook"
-          /> */}
-      </Img>
-      <Img src={github} alt="logo gitHub">
-        {/* <a
-            href="https://github.com/WildCodeSchool/tlse0921-js-p2-NoTimeToulouse"
-            target="_blank"
-            rel="noreferrer"
-          /> */}
-      </Img>
-      <Img src={twitter} alt="logo twitter">
-        {/* <a
-            href="https://twitter.com/WCS_OC"
-            target="_blank"
-            rel="noreferrer"
-          /> */}
-      </Img>
+      <a
+        href="https://www.facebook.com/WildCodeSchool"
+        target="_blank"
+        label="Facebook"
+        rel="noreferrer"
+      >
+        <Img src={facebook} alt="logo facebook" />
+      </a>
+      <a
+        href="https://github.com/WildCodeSchool/tlse0921-js-p2-NoTimeToulouse"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Img src={github} alt="logo gitHub" />
+      </a>
+
+      <a href="https://twitter.com/WCS_OC" target="_blank" rel="noreferrer">
+        <Img src={twitter} alt="logo twitter" />
+      </a>
     </SocialLink>
     <LegalMention>
       <ContributionList>

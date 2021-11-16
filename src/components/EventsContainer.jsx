@@ -98,8 +98,11 @@ const EventsContainer = () => {
         toMosaic={toMosaic}
         handleDisplayClick={() => handleDisplayClick()}
       />
-      {toMosaic ? <CardMosaic eventsToDisplay={eventsToDisplay} /> : null}
-      {toMosaic ? null : <Card eventsToDisplay={eventsToDisplay} />}
+      {toMosaic ? (
+        <CardMosaic eventsToDisplay={eventsToDisplay} />
+      ) : (
+        <Card eventsToDisplay={eventsToDisplay} />
+      )}
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <Card eventsToDisplay={eventsToDisplay} />
     </div>

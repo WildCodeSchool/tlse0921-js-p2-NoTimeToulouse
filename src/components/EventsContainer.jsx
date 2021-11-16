@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SearchEvents from './Search';
 import '../index.css';
-import Card from './pages/evenements/DisplayEvents';
+import DisplayEvents from './pages/evenements/DisplayEvents';
 import Filter from './Filter';
 import MosaicButton from './DisplayLineToMosaic';
 import CardMosaic from './CardMosaic';
@@ -14,7 +14,7 @@ const EventsContainer = () => {
   useEffect(() => {
     axios
       .get(
-        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=400&facet=type_de_manifestation',
+        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows1&facet=type_de_manifestation',
       )
       .then((response) => response.data.records)
       // on convertit le nom des variables via un map
@@ -94,14 +94,14 @@ const EventsContainer = () => {
         setSearchValue={setSearchValue}
         setSendSearch={setSendSearch}
       />
+      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <MosaicButton
         toMosaic={toMosaic}
         handleDisplayClick={() => handleDisplayClick()}
       />
       {toMosaic ? <CardMosaic eventsToDisplay={eventsToDisplay} /> : null}
-      {toMosaic ? null : <Card eventsToDisplay={eventsToDisplay} />}
-      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
-      <Card eventsToDisplay={eventsToDisplay} />
+      {toMosaic ? null : <DisplayEvents eventsToDisplay={eventsToDisplay} />}
+      <DisplayEvents eventsToDisplay={eventsToDisplay} />
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

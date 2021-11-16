@@ -10,6 +10,7 @@ const useFetch = (url) => {
       .get(url)
       .then((res) => {
         setIsLoading(false);
+        console.log(res.data);
         return res.data;
       })
       .then((fetchedData) => setData(fetchedData))

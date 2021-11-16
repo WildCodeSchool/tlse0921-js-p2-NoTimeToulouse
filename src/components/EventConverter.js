@@ -3,11 +3,12 @@ import useFetch from './api/useFetch';
 const EventConverter = (url) => {
   const { data: events, error, isLoading } = useFetch(url);
 
+  console.log(events);
   if (error) {
-    return error;
+    console.log(error);
   }
   if (isLoading) {
-    return isLoading;
+    console.log(isLoading);
   }
 
   const convertedEvents = events.records.map((e) => {

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import fetchApiUnsplash from '../../api/FetchApiUnsplash';
+import CatReducer from './EventsInline/DisplayLines';
 
 const ImgContainer = styled.div`
   width: 90%;
@@ -60,40 +61,43 @@ const ImgGrid = () => {
   };
 
   return (
-    <ImgContainer>
-      <LeftContainer>
-        <Myimg src={img.url} alt="test" />
-        <InfosImg>
-          <p>Photo by {img.userName} on Unsplash</p>
-        </InfosImg>
-      </LeftContainer>
-      <RightContainer>
-        <SmallImg>
-          <Myimg src={img.url} alt="image_test" />
+    <>
+      <ImgContainer>
+        <LeftContainer>
+          <Myimg src={img.url} alt="test" />
           <InfosImg>
             <p>Photo by {img.userName} on Unsplash</p>
           </InfosImg>
-        </SmallImg>
-        <SmallImg>
-          <Myimg src={img.url} alt="image_test" />
-          <InfosImg>
-            <p>Photo by {img.userName} on Unsplash</p>
-          </InfosImg>
-        </SmallImg>
-        <SmallImg>
-          <Myimg src={img.url} alt="image_test" />
-          <InfosImg>
-            <p>Photo by {img.userName} on Unsplash</p>
-          </InfosImg>
-        </SmallImg>
-        <SmallImg>
-          <Myimg src={img.url} alt="image_test" />
-          <InfosImg>
-            <p>Photo by {img.userName} on Unsplash</p>
-          </InfosImg>
-        </SmallImg>
-      </RightContainer>
-    </ImgContainer>
+        </LeftContainer>
+        <RightContainer>
+          <SmallImg>
+            <Myimg src={img.url} alt="image_test" />
+            <InfosImg>
+              <p>Photo by {img.userName} on Unsplash</p>
+            </InfosImg>
+          </SmallImg>
+          <SmallImg>
+            <Myimg src={img.url} alt="image_test" />
+            <InfosImg>
+              <p>Photo by {img.userName} on Unsplash</p>
+            </InfosImg>
+          </SmallImg>
+          <SmallImg>
+            <Myimg src={img.url} alt="image_test" />
+            <InfosImg>
+              <p>Photo by {img.userName} on Unsplash</p>
+            </InfosImg>
+          </SmallImg>
+          <SmallImg>
+            <Myimg src={img.url} alt="image_test" />
+            <InfosImg>
+              <p>Photo by {img.userName} on Unsplash</p>
+            </InfosImg>
+          </SmallImg>
+        </RightContainer>
+      </ImgContainer>
+      <CatReducer />
+    </>
   );
 };
 

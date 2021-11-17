@@ -4,6 +4,11 @@ import DisplayEventModal from '../displayEventModal/DisplayEventModal';
 
 const DisplayEvents = ({ eventsToDisplay }) => {
   const [openModal, setOpenModal] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  function openEventDetails(event) {
+    setSelectedEvent(event);
+    setOpenModal(true);
+  }
 
   return (
     <ContainerCards>
@@ -26,20 +31,19 @@ const DisplayEvents = ({ eventsToDisplay }) => {
                 {event.fields.eventTheme && <li>{event.fields.eventTheme}</li>}
                 {event.fields.price && <li>{event.fields.price}</li>}
               </ListInfoCard>
-              <ButtonOpenEvent
-                onClick={() => {
-                  setOpenModal(true);
-                }}
-              >
+              <ButtonOpenEvent onClick={() => openEventDetails(event)}>
                 Voir plus
               </ButtonOpenEvent>
-              {openModal && (
-                <DisplayEventModal event={event} closeModal={setOpenModal} />
-              )}
             </CardFooter>
           </MainContainer>
         </EventCard>
       ))}
+      {openModal && (
+        <DisplayEventModal
+          event={selectedEvent}
+          closeModal={() => setOpenModal(false)}
+        />
+      )}
     </ContainerCards>
   );
 };

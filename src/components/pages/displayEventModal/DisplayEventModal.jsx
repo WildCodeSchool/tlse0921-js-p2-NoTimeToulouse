@@ -44,7 +44,7 @@ const DisplayEventModal = ({ event, closeModal }) => (
       </Button>
       <Button
         onClick={() => {
-          closeModal(false);
+          closeModal();
         }}
       >
         X

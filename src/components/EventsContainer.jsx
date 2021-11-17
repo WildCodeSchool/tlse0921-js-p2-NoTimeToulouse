@@ -4,8 +4,6 @@ import '../index.css';
 import DisplayEvents from './pages/evenements/DisplayEvents';
 import Filter from './Filter';
 
-// import DisplayEvent from './displayEvent';
-
 const EventsContainer = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
@@ -74,18 +72,10 @@ const EventsContainer = () => {
     );
   }, [filterValue]);
 
-  const [toMosaic, setToMosaic] = useState(false);
-  function handleDisplayClick() {
-    setToMosaic(!toMosaic);
-  }
   return (
     <div className="search-container">
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
-      <MosaicButton
-        toMosaic={toMosaic}
-        handleDisplayClick={() => handleDisplayClick()}
-      />
-
+      <DisplayEvents eventsToDisplay={eventsToDisplay} />
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

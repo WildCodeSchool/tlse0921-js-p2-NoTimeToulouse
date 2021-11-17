@@ -6,6 +6,7 @@ import twitter from '../../assets/twitter.png';
 const NewsLetter = styled.form`
   display: flex;
   justify-content: center;
+
   label {
     padding: 1em;
     width: 20%;
@@ -47,6 +48,7 @@ const SocialLink = styled.div`
 
 const Wrapper = styled.section`
   background: var(--important-color);
+  margin-top: 300px;
 `;
 
 const LegalMention = styled.div`

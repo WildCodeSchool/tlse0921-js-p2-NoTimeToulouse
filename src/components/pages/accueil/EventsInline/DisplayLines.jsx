@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Lines from './Line';
-import '../../../../index.css';
 
 const LinesContainer = styled.div`
   display: flex;

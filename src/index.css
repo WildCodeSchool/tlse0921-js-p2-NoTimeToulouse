@@ -9,6 +9,8 @@
 
 * {
   text-decoration: none;
+  list-style: none;
+  padding: 0;
 }
 
 body {
@@ -46,4 +48,14 @@ p {
 
 .search-container {
   width: 100%;
+}
+.events-container {
+  display: flex;
+  width: 200%;
+}
+.one-event {
+  margin-left: 0.5em;
+  padding: 1em;
+  border: 1px solid black;
+  overflow: hidden;
 }

@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import DisplayEvents from '../../evenements/DisplayEvents';
 import FetchApiTls from '../../../api/FetchApiTls';
+import '../../../../index.css';
 
 const EventsInLine = styled.div`
-  display: flex;
   width: 100%;
+  overflow: scroll;
+  margin-bottom: 1em;
+  font-size: 0.5em;
 `;
 const EventContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: calc((100vw / 5) - 5px);
+  border: 1px solid black;
 `;
 
 const Line = ({ theme }) => {
@@ -17,7 +18,7 @@ const Line = ({ theme }) => {
   return (
     <EventsInLine>
       <EventContainer>
-        <DisplayEvents eventsToDisplay={events} />
+        <DisplayEvents eventsToDisplay={events} className="event-line" />
       </EventContainer>
     </EventsInLine>
   );

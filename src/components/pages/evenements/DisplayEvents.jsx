@@ -1,13 +1,13 @@
 import React from 'react';
 
 const DisplayEvents = ({ eventsToDisplay }) => (
-  <>
+  <div className="events-container">
     {eventsToDisplay.map((event) => (
-      <>
+      <div className="one-event">
         <h2>{event.fields.name}</h2>
         <div className="description">
-          {event.fields.littleDescription.length > 100 ? (
-            <p>{`${event.fields.littleDescription.slice(0, 100)} ...`}</p>
+          {event.fields.littleDescription.length > 50 ? (
+            <p>{`${event.fields.littleDescription.slice(0, 50)} ...`}</p>
           ) : (
             <p>{event.fields.littleDescription}</p>
           )}
@@ -21,8 +21,8 @@ const DisplayEvents = ({ eventsToDisplay }) => (
           </ul>
           <button type="button">Voir plus</button>
         </div>
-      </>
+      </div>
     ))}
-  </>
+  </div>
 );
 export default DisplayEvents;

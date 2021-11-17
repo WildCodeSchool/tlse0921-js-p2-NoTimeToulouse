@@ -39,8 +39,9 @@ const EventImg = styled.img`
 const TitleEvent = styled.h2`
   position: absolute;
   font-size: 1.5em;
-  bottom: 20%;
-  left: 3%;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   background-color: rgba(255, 255, 255, 30%);
 `;
 const ButtonImgEvent = styled.button`
@@ -49,9 +50,6 @@ const ButtonImgEvent = styled.button`
   border-radius: 10px;
   border: 0;
   cursor: pointer;
-  &:hover {
-    background-color: rgba(255, 255, 255, 30%);
-  }
 `;
 
 export default DisplayEventsInLine;

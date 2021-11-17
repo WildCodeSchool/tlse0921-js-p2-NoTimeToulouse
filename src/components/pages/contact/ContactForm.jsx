@@ -28,6 +28,7 @@ const UserCategory = styled.div`
 `;
 
 const Form = styled.form`
+
   margin-top: 25%;
   padding-bottom: 2em;
   background-color: #86bbd8;

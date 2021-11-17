@@ -6,11 +6,24 @@ import twitter from '../../assets/twitter.png';
 const NewsLetter = styled.form`
   display: flex;
   justify-content: center;
+
   label {
     padding: 1em;
+    width: 20%;
+    padding-right: 0;
   }
   input {
     width: 50%;
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 20px;
+    border-radius: 7px;
+    text-align: center;
+  }
+  button {
+    width: 100px;
+    height: 25px;
+    margin-top: 42px;
   }
 `;
 
@@ -35,6 +48,7 @@ const SocialLink = styled.div`
 
 const Wrapper = styled.section`
   background: var(--important-color);
+  margin-top: 300px;
 `;
 
 const LegalMention = styled.div`
@@ -61,6 +75,9 @@ const LinkCont = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  a {
+    margin-left: 0.2em;
+  }
 `;
 
 const MadeBy = styled.p`
@@ -105,7 +122,7 @@ const Footer = () => (
     </SocialLink>
     <LegalMention>
       <ContributionList>
-        Realised with:
+        Realisé avec :
         <LinkCont>
           <a
             href="https://styled-components.com/"
@@ -121,7 +138,7 @@ const Footer = () => (
             target="_blank"
             rel="noreferrer"
           >
-            React Leaflet
+            , React Leaflet
           </a>
         </LinkCont>
         <LinkCont>
@@ -130,7 +147,7 @@ const Footer = () => (
             target="_blank"
             rel="noreferrer"
           >
-            API de Toulouse métropole
+            , API de Toulouse métropole
           </a>
         </LinkCont>
       </ContributionList>

@@ -26,7 +26,7 @@ const Header = () => {
         <Link to="/evenements">
           <MenuLink>Évènements</MenuLink>
         </Link>
-        <Link to="/qui-sommes-nous">
+        <Link to="/about">
           <MenuLink>Qui sommes-nous ?</MenuLink>
         </Link>
         <Link to="/contact">

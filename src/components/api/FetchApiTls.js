@@ -1,15 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import '../index.css';
-import DisplayEvents from './pages/evenements/DisplayEvents';
-import Filter from './Filter';
 
-const EventsContainer = () => {
+const FetchApiTls = (theme) => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     axios
       .get(
-        'https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows1&facet=type_de_manifestation',
+        `https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=agenda-des-manifestations-culturelles-so-toulouse&q=&rows=5&facet=date_debut&facet=date_fin&facet=categorie_de_la_manifestation&refine.categorie_de_la_manifestation=${theme}`,
       )
       .then((response) => response.data.records)
       // on convertit le nom des variables via un map
@@ -17,6 +14,7 @@ const EventsContainer = () => {
       .then((fetchedEvents) => fetchedEvents.map((e) => {
         const {
           nom_de_la_manifestation: name,
+          categorie_de_la_manifestation: eventCategory,
           dates_affichage_horaires: dates,
           type_de_manifestation: eventType,
           theme_de_la_manifestation: eventTheme,
@@ -38,6 +36,7 @@ const EventsContainer = () => {
           fields: {
             name,
             dates,
+            eventCategory,
             eventType,
             eventTheme,
             littleDescription,
@@ -59,26 +58,7 @@ const EventsContainer = () => {
       });
   }, []);
 
-  const [filterValue, setFilterValue] = useState(undefined);
-  const [eventsToDisplay, setEventsToDisplay] = useState([]);
-  useEffect(() => {
-    setEventsToDisplay(
-      events.filter(
-        (eventsFiltered) => (eventsFiltered.fields.eventTheme
-            && eventsFiltered.fields.eventTheme.includes(filterValue))
-          || (eventsFiltered.fields.eventType
-            && eventsFiltered.fields.eventType.includes(filterValue)),
-      ),
-    );
-  }, [filterValue]);
-
-  return (
-    <div className="search-container">
-      <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
-      <DisplayEvents eventsToDisplay={eventsToDisplay} />
-    </div>
-  );
-  // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut
+  return events;
 };
 
-export default EventsContainer;
+export default FetchApiTls;

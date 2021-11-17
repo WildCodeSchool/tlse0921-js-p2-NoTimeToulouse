@@ -18,7 +18,7 @@ function App() {
             <Route path="/accueil" element={<HomePage />} />
             <Route path="/evenements" element={<EventsContainer />} />
             <Route path="/contact" element={<Form />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/a-propos" element={<AboutPage />} />
           </Routes>
         </MainContainer>
       </Layout>

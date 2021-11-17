@@ -1,9 +1,7 @@
-import React from 'react';
-
-const DisplayEvents = ({ eventsToDisplay }) => (
-  <div>
+const DisplayEventsInLine = ({ eventsToDisplay }) => (
+  <div className="events-container">
     {eventsToDisplay.map((event) => (
-      <div>
+      <div className="one-event">
         <h2>{event.fields.name}</h2>
         <div className="description">
           {event.fields.littleDescription.length > 50 ? (
@@ -25,4 +23,4 @@ const DisplayEvents = ({ eventsToDisplay }) => (
     ))}
   </div>
 );
-export default DisplayEvents;
+export default DisplayEventsInLine;

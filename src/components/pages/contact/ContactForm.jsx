@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import validate from './ContactFormValidation';
+import useForm from './useForm';
 
 const Title = styled.h2`
   text-align: center;
@@ -26,13 +28,15 @@ const UserCategory = styled.div`
 `;
 
 const Form = styled.form`
-  margin-top: 0;
-  padding-bottom: 1em;
+
+  margin-top: 25%;
+  padding-bottom: 2em;
   background-color: #86bbd8;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 15px;
   @media (min-width: 480px) {
     width: 50%;
   }
@@ -78,27 +82,18 @@ const Button = styled.input`
 `;
 
 const ContactForm = () => {
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const resetForm = () => {
-    setFirstname('');
-    setLastname('');
-    setPhone('');
-    setEmail('');
-    setMessage('');
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    resetForm();
-  };
+  function sentMessage() {
+    alert('Message envoyé !');
+  }
+  const {
+    values, errors, handleChange, handleSubmit,
+  } = useForm(
+    sentMessage,
+    validate,
+  );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Title>Contactez-nous</Title>
       <UserCategory>
         <select type="select">
@@ -112,58 +107,69 @@ const ContactForm = () => {
         <label htmlFor="firstname">
           Prénom :<br />
           <input
-            type="text"
-            id="firstname"
+            className={`input ${errors.firstname && 'is-danger'}`}
+            type="firstname"
             name="firstname"
-            onChange={(e) => setFirstname(e.target.value)}
-            value={firstname}
-            autoComplete="off"
+            onChange={handleChange}
+            value={values.firstname || ''}
             required
           />
+          {errors.firstname && (
+            <p className="help is-danger">{errors.firstname}</p>
+          )}
         </label>
         <label htmlFor="lastname">
           Nom :<br />
           <input
-            type="text"
-            id="lastname"
+            className={`input ${errors.lastname && 'is-danger'}`}
+            type="lastname"
             name="lastname"
-            onChange={(e) => setLastname(e.target.value)}
-            value={lastname}
-            autoComplete="off"
+            onChange={handleChange}
+            value={values.lastname || ''}
             required
           />
+          {errors.lastname && (
+            <p className="help is-danger">{errors.lastname}</p>
+          )}
         </label>
         <label htmlFor="phone">
           Téléphone :<br />
           <input
-            type="text"
-            id="phone"
+            className={`input ${errors.phone && 'is-danger'}`}
+            type="phone"
             name="phone"
-            onChange={(e) => setPhone(e.target.value)}
-            value={phone}
+            onChange={handleChange}
+            value={values.phone || ''}
             required
           />
+          {errors.phone && <p className="help is-danger">{errors.phone}</p>}
         </label>
         <label htmlFor="email">
           Email :<br />
           <input
+            autoComplete="off"
+            className={`input ${errors.email && 'is-danger'}`}
             type="email"
             id="email"
             name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
+            onChange={handleChange}
+            value={values.email || ''}
             required
           />
+          {errors.email && <p className="help is-danger">{errors.email}</p>}
         </label>
         <label htmlFor="message">
           Votre message :
           <textarea
+            autoComplete="off"
+            className={`input ${errors.message && 'is-danger'}`}
             id="message"
             name="message"
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
+            onChange={handleChange}
+            value={values.message || ''}
             required
           />
+          {errors.message && <p className="help is-danger">{errors.message}</p>}
         </label>
       </FormContent>
       <Button

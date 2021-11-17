@@ -68,6 +68,7 @@ const EventCard = styled.div`
   align-items: center;
 `;
 const MainContainer = styled.div`
+  font-family: var(--text-font);
   width: 63%;
   font-size: 0.8em;
   padding: 1em;
@@ -83,6 +84,7 @@ const ListInfoCard = styled.ul`
   padding: 0;
 `;
 const CardsTitle = styled.h2`
+  font-family: var(--title-font);
   font-size: 1.2em;
 `;
 const ButtonOpenEvent = styled.button`

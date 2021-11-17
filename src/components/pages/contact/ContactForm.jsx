@@ -4,6 +4,7 @@ import validate from './ContactFormValidation';
 import useForm from './useForm';
 
 const Title = styled.h2`
+  font-family: var(--title-font);
   text-align: center;
   font-size: 2em;
 `;
@@ -13,12 +14,14 @@ const UserCategory = styled.div`
   align-self: center;
 
   select {
+    font-family: var(--text-font);
     width: 150px;
     height: 40px;
     border-radius: 5px;
   }
 
   option {
+    font-family: var(--text-font);
     text-align: center;
     font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -28,7 +31,6 @@ const UserCategory = styled.div`
 `;
 
 const Form = styled.form`
-
   margin-top: 25%;
   padding-bottom: 2em;
   background-color: #86bbd8;
@@ -49,10 +51,12 @@ const FormContent = styled.div`
   align-items: center;
 
   label {
+    font-family: var(--text-font);
     margin-top: 1.5em;
     width: 80%;
   }
   input {
+    font-family: var(--text-font);
     margin-top: 5px;
     width: 100%;
     border: 0;
@@ -61,6 +65,7 @@ const FormContent = styled.div`
   }
 
   textarea {
+    font-family: var(--text-font);
     margin-top: 5px;
     width: 100%;
     height: 150px;
@@ -69,6 +74,7 @@ const FormContent = styled.div`
   }
 `;
 const Button = styled.input`
+  font-family: var(--title-font);
   width: 80%;
   height: 50px;
   margin-top: 1em;

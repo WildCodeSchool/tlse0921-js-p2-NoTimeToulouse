@@ -70,12 +70,14 @@ const SampleEvent = styled.div`
 `;
 
 const TitleEvent = styled.h1`
+  font-family: var(--title-font);
   text-align: center;
   font-size: bold;
 `;
 
 const Button = styled.button`
   color: palevioletred;
+  font-family: var(--text-font);
   font-size: 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
@@ -86,6 +88,7 @@ const Button = styled.button`
 `;
 
 const DescribeEvent = styled.section`
+  font-family: var(--text-font);
   display: flex;
   flex-direction: column;
   font-size: 25px;
@@ -120,9 +123,12 @@ const InfoCard = styled.section`
   justify-content: flex-end;
   text-align: center;
 `;
-const TagCategory = styled.section``;
+const TagCategory = styled.section`
+  font-family: var(--text-font);
+`;
 
 const DescribeList = styled.section`
+  font-family: var(--text-font);
   font-weight: bold;
   font-size: 16px;
 `;

@@ -49,6 +49,8 @@ const SocialLink = styled.div`
 const Wrapper = styled.section`
   background: var(--important-color);
   margin-top: 300px;
+  font-family: var(--text-font);
+  text-decoration: none;
 `;
 
 const LegalMention = styled.div`
@@ -152,7 +154,7 @@ const Footer = () => (
         </LinkCont>
       </ContributionList>
       <MadeBy>Réalisé ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
-      <MadeBy>session dev 09_2021 de Wild Code School</MadeBy>
+      <MadeBy>Session dev 09-2021 de Wild Code School</MadeBy>
     </LegalMention>
   </Wrapper>
 );

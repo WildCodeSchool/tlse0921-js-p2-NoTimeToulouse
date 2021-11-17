@@ -42,6 +42,7 @@ const TitleEvent = styled.h2`
   bottom: 20%;
   left: 3%;
   background-color: rgba(255, 255, 255, 30%);
+  font-family: var(--text-font);
 `;
 const ButtonImgEvent = styled.button`
   height: 100%;
@@ -49,6 +50,7 @@ const ButtonImgEvent = styled.button`
   border-radius: 10px;
   border: 0;
   cursor: pointer;
+  font-family: var(--text-font);
   &:hover {
     background-color: rgba(255, 255, 255, 30%);
   }

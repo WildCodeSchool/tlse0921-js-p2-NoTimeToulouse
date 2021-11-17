@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const About = styled.p`
   text-align: center;
   margin: 50px;
+  font-family: var(--text-font);
 `;
 
 const AboutPage = () => (

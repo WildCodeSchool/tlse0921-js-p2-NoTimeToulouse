@@ -10,6 +10,7 @@ const LinesContainer = styled.div`
 `;
 const TitleContainer = styled.h2`
   margin-top: 4%;
+  font-family: var(--title-font);
 `;
 const DisplayLines = () => (
   <LinesContainer>

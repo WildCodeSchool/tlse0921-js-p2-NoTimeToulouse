@@ -1,7 +1,7 @@
 export default function validate(values) {
   const errors = {};
   if (!values.email) {
-    errors.email = 'Veuillez renseigner une adresse email.';
+    errors.email = 'Veuillez renseigner une adresse email valide.';
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = 'Adresse email invalide';
   }

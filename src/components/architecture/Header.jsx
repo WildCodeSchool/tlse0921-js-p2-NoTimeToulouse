@@ -46,7 +46,7 @@ const Nav = styled.nav`
   background-color: var(--important-color);
   height: 70px;
   @media (min-width: 480px) {
-    height: 90px;
+    height: 95px;
   }
   @media (min-width: 1000px) {
     height: 100px;
@@ -73,8 +73,8 @@ const Logo = styled.div`
   }
   @media (min-width: 480px) {
     img {
-      width: 28%;
-      margin-top: -18px;
+      width: 26%;
+      margin-top: -22px;
     }
   }
   @media (min-width: 1000px) {

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import SearchEvents from './Search';
 import '../index.css';
 import DisplayEvents from './pages/evenements/DisplayEvents';
 import Filter from './Filter';
@@ -66,22 +65,16 @@ const EventsContainer = () => {
 
   const [filterValue, setFilterValue] = useState(undefined);
   const [eventsToDisplay, setEventsToDisplay] = useState([]);
-  const [searchValue, setSearchValue] = useState('');
-  const [sendSearch, setSendSearch] = useState(false);
   useEffect(() => {
     setEventsToDisplay(
       events.filter(
         (eventsFiltered) => (eventsFiltered.fields.eventTheme
-            && eventsFiltered.fields.eventTheme.includes(
-              filterValue || searchValue,
-            ))
+            && eventsFiltered.fields.eventTheme.includes(filterValue))
           || (eventsFiltered.fields.eventType
-            && eventsFiltered.fields.eventType.includes(
-              filterValue || searchValue,
-            )),
+            && eventsFiltered.fields.eventType.includes(filterValue)),
       ),
     );
-  }, [filterValue, sendSearch]);
+  }, [filterValue]);
 
   const [toMosaic, setToMosaic] = useState(false);
   function handleDisplayClick() {
@@ -89,11 +82,6 @@ const EventsContainer = () => {
   }
   return (
     <div className="search-container">
-      <SearchEvents
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        setSendSearch={setSendSearch}
-      />
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <MosaicButton
         toMosaic={toMosaic}

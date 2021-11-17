@@ -4,7 +4,7 @@ import Lines from './Line';
 const LinesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
 `;
 const DisplayLines = () => (
   <LinesContainer>

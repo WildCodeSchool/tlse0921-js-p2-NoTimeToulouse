@@ -49,18 +49,20 @@ p {
 .search-container {
   width: 100%;
 }
-.events-container {
+
+.footer-cards-inline {
   display: flex;
-  width: 200%;
-}
-.one-event {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  margin-left: 0.5em;
-  width: 25%;
-  padding: 1em;
-  border: 1px solid black;
-  border-radius: 10px;
-  overflow: hidden;
+  height: 20%;
+  align-items: center;
+}
+.drop-modal {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 100%;
+}
+.infos-card {
+  width: 50%;
+  height: 50%;
 }

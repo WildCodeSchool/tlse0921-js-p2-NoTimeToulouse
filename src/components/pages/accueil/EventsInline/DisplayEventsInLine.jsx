@@ -4,12 +4,14 @@ import fetchApiUnsplash from '../../../api/FetchApiUnsplash';
 const DisplayEventsInLine = ({ eventsToDisplay }) => (
   <EventContainer>
     {eventsToDisplay.map((event) => (
-      <CardEvent className="one-event">
+      <CardEvent>
         <TitleEvent>{event.fields.name}</TitleEvent>
-        <EventImg
-          src={fetchApiUnsplash(event.fields.eventCategory).urlImg}
-          alt={event.fields.name}
-        />
+        <ButtonImgEvent>
+          <EventImg
+            src={fetchApiUnsplash(event.fields.eventCategory).urlImg}
+            alt={event.fields.name}
+          />
+        </ButtonImgEvent>
       </CardEvent>
     ))}
   </EventContainer>
@@ -22,7 +24,7 @@ const EventContainer = styled.div`
 const CardEvent = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 3em;
+  margin-left: 0.5em;
   width: 20%;
   height: 30vh;
   border: 1px solid black;
@@ -40,6 +42,16 @@ const TitleEvent = styled.h2`
   bottom: 20%;
   left: 3%;
   background-color: rgba(255, 255, 255, 30%);
+`;
+const ButtonImgEvent = styled.button`
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 255, 255, 30%);
+  }
 `;
 
 export default DisplayEventsInLine;

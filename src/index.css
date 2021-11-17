@@ -45,24 +45,3 @@ p {
 .div-search {
   margin: auto;
 }
-
-.search-container {
-  width: 100%;
-}
-
-.footer-cards-inline {
-  display: flex;
-  justify-content: space-between;
-  height: 20%;
-  align-items: center;
-}
-.drop-modal {
-  width: 10px;
-  height: 10px;
-  border: 0;
-  border-radius: 100%;
-}
-.infos-card {
-  width: 50%;
-  height: 50%;
-}

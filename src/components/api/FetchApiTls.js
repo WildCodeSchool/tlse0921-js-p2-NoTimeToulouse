@@ -14,6 +14,7 @@ const FetchApiTls = (theme) => {
       .then((fetchedEvents) => fetchedEvents.map((e) => {
         const {
           nom_de_la_manifestation: name,
+          categorie_de_la_manifestation: eventCategory,
           dates_affichage_horaires: dates,
           type_de_manifestation: eventType,
           theme_de_la_manifestation: eventTheme,
@@ -35,6 +36,7 @@ const FetchApiTls = (theme) => {
           fields: {
             name,
             dates,
+            eventCategory,
             eventType,
             eventTheme,
             littleDescription,

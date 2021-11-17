@@ -2,21 +2,25 @@ import styled from 'styled-components';
 import Lines from './Line';
 
 const LinesContainer = styled.div`
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   width: 90%;
 `;
+const TitleContainer = styled.h2`
+  margin-top: 4%;
+`;
 const DisplayLines = () => (
   <LinesContainer>
-    <h2>Concerts</h2>
+    <TitleContainer>Concerts</TitleContainer>
     <Lines theme="Concert" />
-    <h2>Animations</h2>
+    <TitleContainer>Animations</TitleContainer>
     <Lines theme="Animations" />
-    <h2>Festivals</h2>
+    <TitleContainer>Festivals</TitleContainer>
     <Lines theme="Concert%2C+Festival" />
-    <h2>Expositions</h2>
+    <TitleContainer>Expositions</TitleContainer>
     <Lines theme="Exposition" />
-    <h2>Spectacles</h2>
+    <TitleContainer>Spectacles</TitleContainer>
     <Lines theme="Animations%2C+Spectacle" />
   </LinesContainer>
 );

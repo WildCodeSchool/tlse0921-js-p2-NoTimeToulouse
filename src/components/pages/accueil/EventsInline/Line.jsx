@@ -9,17 +9,14 @@ const EventsInLine = styled.div`
   margin-bottom: 1em;
   font-size: 0.5em;
 `;
-const EventContainer = styled.div`
-  ${'' /* border: 1px solid black; */}
-`;
 
 const Line = ({ theme }) => {
   const events = FetchApiTls(theme);
   return (
     <EventsInLine>
-      <EventContainer>
+      <div>
         <DisplayEventsInLine eventsToDisplay={events} className="event-line" />
-      </EventContainer>
+      </div>
     </EventsInLine>
   );
 };

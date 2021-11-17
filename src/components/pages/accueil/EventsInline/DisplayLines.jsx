@@ -1,7 +1,14 @@
+import styled from 'styled-components';
 import Lines from './Line';
+import '../../../../index.css';
 
+const LinesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
 const DisplayLines = () => (
-  <div>
+  <LinesContainer>
     <h2>Concerts</h2>
     <Lines theme="Concert" />
     <h2>Animations</h2>
@@ -12,7 +19,7 @@ const DisplayLines = () => (
     <Lines theme="Exposition" />
     <h2>Spectacles</h2>
     <Lines theme="Animations%2C+Spectacle" />
-  </div>
+  </LinesContainer>
 );
 
 export default DisplayLines;

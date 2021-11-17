@@ -127,6 +127,9 @@ const ContactForm = () => {
             value={values.lastname || ''}
             required
           />
+          {errors.lastname && (
+            <p className="help is-danger">{errors.lastname}</p>
+          )}
         </label>
         <label htmlFor="phone">
           Téléphone :<br />

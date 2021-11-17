@@ -202,7 +202,7 @@ const Footer = () => (
           </Hyperlien>
         </LinkCont>
       </ContributionList>
-      <MadeBy>Réalisé ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
+      <MadeBy>Réalisé par ♥️ par Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
       <MadeBy>Session dev 09_2021 de la Wild Code School</MadeBy>
     </LegalMention>
   </Wrapper>

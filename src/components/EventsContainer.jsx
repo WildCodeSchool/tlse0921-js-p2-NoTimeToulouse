@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import '../index.css';
 import DisplayEvents from './pages/evenements/DisplayEvents';
 import Filter from './Filter';
-import MosaicButton from './DisplayLineToMosaic';
-import CardMosaic from './CardMosaic';
 
 // import DisplayEvent from './displayEvent';
 
@@ -87,9 +85,7 @@ const EventsContainer = () => {
         toMosaic={toMosaic}
         handleDisplayClick={() => handleDisplayClick()}
       />
-      {toMosaic ? <CardMosaic eventsToDisplay={eventsToDisplay} /> : null}
-      {toMosaic ? null : <DisplayEvents eventsToDisplay={eventsToDisplay} />}
-      <DisplayEvents eventsToDisplay={eventsToDisplay} />
+
     </div>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut

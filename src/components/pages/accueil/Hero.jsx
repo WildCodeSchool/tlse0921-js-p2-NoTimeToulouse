@@ -2,11 +2,16 @@ import styled from 'styled-components';
 
 const Hero = () => (
   <ImgContainer>
-    <HeroTitle>Agenda événementiel Toulouse</HeroTitle>
-    <div>
-      <button type="button">Trouver un événement</button>
-      <button type="button">Nous Contacter</button>
-    </div>
+    <HeroTitle>
+      Votre Agenda événementiel <br />
+      Toulousain
+    </HeroTitle>
+    <ButtonContainer>
+      <QuickButtonLeft>Concert</QuickButtonLeft>
+      <QuickButtonLeft>Musique</QuickButtonLeft>
+      <QuickButtonRight>Art</QuickButtonRight>
+      <QuickButtonRight>Sport</QuickButtonRight>
+    </ButtonContainer>
   </ImgContainer>
 );
 
@@ -23,6 +28,31 @@ const ImgContainer = styled.div`
 `;
 const HeroTitle = styled.h1`
   color: white;
-  font-size: 1.5em;
+  text-align: center;
+  font-size: 2em;
+`;
+const ButtonContainer = styled.div`
+  margin-top: 2em;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+`;
+const QuickButtonLeft = styled.button`
+  width: 20%;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: var(--important-color) solid 3px;
+  background-color: var(--important-color);
+`;
+const QuickButtonRight = styled.button`
+  width: 20%;
+  height: 50px;
+  color: var(--important-color);
+  font-weight: bold;
+  border-radius: 5px;
+  border: white solid 3px;
+  background: rgba(255, 255, 255, 0.1);
 `;
 export default Hero;

@@ -24,7 +24,9 @@ const DisplayEventsInLine = ({ eventsToDisplay }) => (
           </LeftCard>
           <RightCard>
             {event.fields.littleDescription.length > 150
-              ? `${event.fields.littleDescription.slice(0, 150)} ...`
+              ? `${event.fields.littleDescription
+                .slice(0, 150)
+                .toUpperCase()} ...`
               : event.fields.littleDescription}
           </RightCard>
         </MainCard>
@@ -39,6 +41,9 @@ const DisplayEventsInLine = ({ eventsToDisplay }) => (
 const EventContainer = styled.div`
   display: flex;
   width: 400%;
+  @media screen and (min-width: 600px) {
+    width: 200%;
+  }
 `;
 const CardEvent = styled.div`
   display: flex;
@@ -50,6 +55,10 @@ const CardEvent = styled.div`
   height: 50vh;
   border: 1px solid grey;
   border-radius: 10px;
+  @media screen and (min-width: 770px) {
+    width: 60%;
+    height: 50vh;
+  }
 `;
 const TitleEvent = styled.h2`
   font-size: 2em;
@@ -87,7 +96,7 @@ const LeftCard = styled.div`
 `;
 const RightCard = styled.div`
   width: 100%;
-  font-size: 1.8em;
+  font-size: 1.6em;
   padding: 1em;
   font-family: var(--text-font);
 `;
@@ -112,6 +121,7 @@ const ButtonModal = styled.button`
   background-color: var(--secondary-color);
   &:hover {
     background-color: var(--secondary-color-light);
+    cursor: pointer;
   }
 `;
 const Date = styled.div`

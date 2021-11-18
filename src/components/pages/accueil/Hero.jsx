@@ -37,6 +37,9 @@ const ButtonContainer = styled.div`
   width: 90%;
   display: flex;
   justify-content: space-around;
+  @media screen and (min-width: 770px) {
+    width: 85%;
+  }
 `;
 const QuickButtonLeft = styled.button`
   font-size: 1em;

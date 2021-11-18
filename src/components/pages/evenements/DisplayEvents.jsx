@@ -42,7 +42,6 @@ const DisplayEvents = ({ eventsToDisplay }) => {
         <DisplayEventModal
           event={selectedEvent}
           closeModal={() => setOpenModal(false)}
-          openModal={() => setOpenModal(true)}
         />
       )}
     </ContainerCards>

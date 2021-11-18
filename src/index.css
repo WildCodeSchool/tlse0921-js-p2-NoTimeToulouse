@@ -33,14 +33,14 @@ p {
   color: var(--dark-color);
 }
 
-#map {
+/* #map {
   height: 300px;
   width: 100%;
-}
-.leaflet-container {
+} */
+/* .leaflet-container {
   height: 300px;
   width: 100%;
-}
+} */
 
 .div-search {
   margin: auto;

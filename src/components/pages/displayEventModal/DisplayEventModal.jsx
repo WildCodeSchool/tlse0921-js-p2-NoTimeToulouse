@@ -1,9 +1,37 @@
 import styled from 'styled-components';
+import FetchApiUnsplash from '../../api/FetchApiUnsplash';
 import Location from '../evenements/Location';
 import '../../../index.css';
 
-const DisplayEventModal = ({ event, closeModal }) => (
-  <BackModal>
+const DisplayEventModal = ({ event, closeModal }) => {
+
+  let imgUrl = '';
+
+  if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Concert')
+  ) {
+    imgUrl = FetchApiUnsplash('Concert').urlImg;
+  } else if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Cinéma')
+  ) {
+    imgUrl = FetchApiUnsplash('cinema').urlImg;
+  } else if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Exposition')
+  ) {
+    imgUrl = FetchApiUnsplash('exposition').urlImg;
+  } else if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Art')
+  ) {
+    imgUrl = FetchApiUnsplash('art').urlImg;
+  } else {
+    imgUrl = FetchApiUnsplash('toulouse').urlImg;
+  }
+  return (
+   <BackModal>
     <SampleEvent>
       <HeadEvent>
         <ButtonCloseModal
@@ -104,6 +132,7 @@ const HeadEvent = styled.div`
 
 const TitleEvent = styled.h1`
   padding: 0.5em 0;
+  font-family: var(--title-font);
   font-size: 3.5em;
   font-style: bold;
   margin: auto;
@@ -116,6 +145,7 @@ const ImgEvent = styled.img`
 `;
 
 const DescribeEvent = styled.section`
+  font-family: var(--text-font);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,10 +172,8 @@ const DetailEvent = styled.section`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* font-size: 0.5em; */
 
   .aside {
-    /* display: flex; */
     flex-direction: column;
     text-align: center;
   }
@@ -159,6 +187,7 @@ const DescribeList = styled.section`
   font-weight: bold;
   font-size: 16px;
   border-radius: 5px;
+  font-family: var(--text-font);
 
   li {
     padding: 0.5em;

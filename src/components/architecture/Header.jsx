@@ -26,9 +26,6 @@ const Header = () => {
         <Link to="/evenements">
           <MenuLink>Évènements</MenuLink>
         </Link>
-        <Link to="/a-propos">
-          <MenuLink>Qui sommes-nous ?</MenuLink>
-        </Link>
         <Link to="/contact">
           <MenuLink>Contact</MenuLink>
         </Link>
@@ -46,7 +43,7 @@ const Nav = styled.nav`
   background-color: var(--important-color);
   height: 70px;
   @media (min-width: 480px) {
-    height: 90px;
+    height: 95px;
   }
   @media (min-width: 1000px) {
     height: 100px;
@@ -73,8 +70,8 @@ const Logo = styled.div`
   }
   @media (min-width: 480px) {
     img {
-      width: 28%;
-      margin-top: -18px;
+      width: 26%;
+      margin-top: -22px;
     }
   }
   @media (min-width: 1000px) {
@@ -87,15 +84,15 @@ const Logo = styled.div`
 
 const Menu = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   z-index: 10;
   flex-direction: column;
   width: 100%;
+  height: 150px;
   max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
   background-color: #f06e96;
-  opacity: 95%;
   overflow: hidden;
   z-index: 1;
   @media (min-width: 1000px) {
@@ -108,6 +105,7 @@ const Menu = styled.div`
 `;
 
 const MenuLink = styled.a`
+  font-family: var(--title-font);
   text-decoration: none;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -117,6 +115,7 @@ const MenuLink = styled.a`
   transition: all 0.3 ease-in;
   font-size: 1.5rem;
   font-weight: bold;
+
   &:hover {
     color: #fff3f0;
   }
@@ -126,10 +125,7 @@ const Burger = styled.div`
   flex-direction: column;
   cursor: pointer;
   background-color: #f06e96;
-  margin-top: 25px;
-  margin-left: 30px;
-  margin-right: 20px;
-  margin-bottom: none;
+  margin: 30px 20px 30px 20px;
   padding: none;
   height: 30px;
   display: flex;

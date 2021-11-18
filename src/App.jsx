@@ -6,7 +6,6 @@ import Header from './components/architecture/Header';
 import Footer from './components/architecture/Footer';
 import HomePage from './components/architecture/HomePage';
 import MainContainer from './style/MainContainer';
-import AboutPage from './components/pages/about/AboutPage';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
             <Route path="/accueil" element={<HomePage />} />
             <Route path="/evenements" element={<EventsContainer />} />
             <Route path="/contact" element={<Form />} />
-            <Route path="/a-propos" element={<AboutPage />} />
           </Routes>
         </MainContainer>
       </Layout>

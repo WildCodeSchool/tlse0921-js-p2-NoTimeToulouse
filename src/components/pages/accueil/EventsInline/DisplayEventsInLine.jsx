@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import fetchApiUnsplash from '../../../api/FetchApiUnsplash';
+import { Link } from 'react-router-dom';
 
 const DisplayEventsInLine = ({ eventsToDisplay }) => (
   <EventContainer>
@@ -31,7 +31,9 @@ const DisplayEventsInLine = ({ eventsToDisplay }) => (
           </RightCard>
         </MainCard>
         <FooterCard>
-          <ButtonModal>Voir plus</ButtonModal>
+          <Link to="/evenements">
+            <ButtonModal>Voir plus</ButtonModal>
+          </Link>
         </FooterCard>
       </CardEvent>
     ))}

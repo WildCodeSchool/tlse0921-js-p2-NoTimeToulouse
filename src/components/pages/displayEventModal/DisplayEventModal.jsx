@@ -149,11 +149,6 @@ const InfoCard = styled.section`
   justify-content: flex-end;
   text-align: center;
 `;
-
-const TagCategory = styled.section`
-  font-family: var(--text-font);
-`;
-
 const DescribeList = styled.section`
   font-family: var(--text-font);
   font-weight: bold;

@@ -66,6 +66,10 @@ const SocialLink = styled.div`
 
 const Wrapper = styled.section`
   background: var(--important-color);
+  margin-top: 300px;
+  font-family: var(--text-font);
+  text-decoration: none;
+
   @media screen and (min-width: 600px) {
     display: flex;
     flex-direction: row;

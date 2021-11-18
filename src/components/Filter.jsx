@@ -79,6 +79,7 @@ function Filter({ setFilterValue }) {
 }
 
 const QuickSearchButton = styled.input`
+  font-family: var(--text-font);
   width: 20%;
   height: 50px;
   color: ${({ isClicked }) => (isClicked ? 'white' : 'var(--important-color)')};
@@ -88,6 +89,7 @@ const QuickSearchButton = styled.input`
   background-color: ${({ isClicked }) => (isClicked ? 'var(--important-color)' : 'white')};
 `;
 const QuickSearchContainer = styled.div`
+  font-family: var(--text-font);
   width: 100%;
   margin-top: 1em;
   display: flex;

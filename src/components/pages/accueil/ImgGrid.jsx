@@ -45,6 +45,7 @@ const Myimg = styled.img`
   height: 100%;
 `;
 const InfosImg = styled.div`
+  font-family: var(--text-font);
   width: 100%;
   position: absolute;
   bottom: 0;

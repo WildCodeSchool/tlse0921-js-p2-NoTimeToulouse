@@ -108,6 +108,7 @@ const Menu = styled.div`
 `;
 
 const MenuLink = styled.a`
+  font-family: var(--title-font);
   text-decoration: none;
   padding: 1rem 2rem;
   cursor: pointer;

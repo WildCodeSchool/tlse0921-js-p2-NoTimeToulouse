@@ -62,18 +62,22 @@ const EventsContainer = () => {
       });
   }, []);
 
-  const [filterValue, setFilterValue] = useState(undefined);
+  const [filterValue, setFilterValue] = useState(null);
   const [eventsToDisplay, setEventsToDisplay] = useState([]);
+  useEffect(() => {
+    setEventsToDisplay(events);
+  }, [events]);
   useEffect(() => {
     setEventsToDisplay(
       events.filter(
-        (eventsFiltered) => (eventsFiltered.fields.eventTheme
+        (eventsFiltered) => !filterValue
+          || (eventsFiltered.fields.eventTheme
             && eventsFiltered.fields.eventTheme.includes(filterValue))
           || (eventsFiltered.fields.eventType
             && eventsFiltered.fields.eventType.includes(filterValue)),
       ),
     );
-  }, [filterValue]);
+  }, [filterValue, events]);
 
   return (
     <SearchContainer className="search-container">

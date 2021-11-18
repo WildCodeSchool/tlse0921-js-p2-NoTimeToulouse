@@ -7,9 +7,11 @@ const LinesContainer = styled.div`
   flex-direction: column;
   width: 95%;
   height: 100%;
+  padding: 1em;
 `;
 const TitleContainer = styled.h2`
   margin-top: 5%;
+  font-family: var(--title-font);
 `;
 const DisplayLines = () => (
   <LinesContainer>

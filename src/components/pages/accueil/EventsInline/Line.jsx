@@ -6,7 +6,7 @@ import '../../../../index.css';
 const EventsInLine = styled.div`
   width: 100%;
   overflow: scroll;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   font-size: 0.5em;
 `;
 

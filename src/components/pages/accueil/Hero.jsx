@@ -30,6 +30,7 @@ const HeroTitle = styled.h1`
   color: white;
   text-align: center;
   font-size: 2em;
+  font-family: var(--title-font);
 `;
 const ButtonContainer = styled.div`
   margin-top: 2em;
@@ -43,6 +44,7 @@ const QuickButtonLeft = styled.button`
   height: 50px;
   color: white;
   font-weight: bold;
+  font-family: var(--title-font);
   border-radius: 5px;
   border: var(--important-color) solid 3px;
   background-color: var(--important-color);
@@ -59,6 +61,7 @@ const QuickButtonRight = styled.button`
   height: 50px;
   color: var(--important-color);
   font-weight: bold;
+  font-family: var(--title-font);
   border-radius: 5px;
   border: var(--important-color) solid 3px;
   background: rgba(255, 255, 255, 0.7);

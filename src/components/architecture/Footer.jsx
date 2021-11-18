@@ -66,7 +66,7 @@ const SocialLink = styled.div`
 
 const Wrapper = styled.section`
   background: var(--important-color);
-  margin-top: 300px;
+  margin-top: 5em;
   font-family: var(--text-font);
   text-decoration: none;
 

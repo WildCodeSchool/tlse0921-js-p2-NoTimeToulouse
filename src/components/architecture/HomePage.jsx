@@ -1,8 +1,8 @@
-import ImgGrid from '../pages/accueil/ImgGrid';
+import Hero from '../pages/accueil/Hero';
 
 const HomePage = () => (
   <>
-    <ImgGrid />
+    <Hero />
   </>
 );
 

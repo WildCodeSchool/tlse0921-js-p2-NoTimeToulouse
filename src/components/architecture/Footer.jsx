@@ -195,14 +195,14 @@ const Footer = () => (
           >
             React Leaflet
           </Hyperlien>
-
         </LinkCont>
         <LinkCont>
           <Hyperlien
             href="https://data.toulouse-metropole.fr/pages/accueilv3/"
             target="_blank"
             rel="noreferrer"
-          >API de Toulouse métropole
+          >
+            API de Toulouse métropole
           </Hyperlien>
         </LinkCont>
       </ContributionList>

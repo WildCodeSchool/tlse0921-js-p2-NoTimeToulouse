@@ -26,9 +26,6 @@ const Header = () => {
         <Link to="/evenements">
           <MenuLink>Évènements</MenuLink>
         </Link>
-        <Link to="/a-propos">
-          <MenuLink>Qui sommes-nous ?</MenuLink>
-        </Link>
         <Link to="/contact">
           <MenuLink>Contact</MenuLink>
         </Link>
@@ -87,15 +84,15 @@ const Logo = styled.div`
 
 const Menu = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   z-index: 10;
   flex-direction: column;
   width: 100%;
+  height: 150px;
   max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
   background-color: #f06e96;
-  opacity: 95%;
   overflow: hidden;
   z-index: 1;
   @media (min-width: 1000px) {
@@ -118,6 +115,7 @@ const MenuLink = styled.a`
   transition: all 0.3 ease-in;
   font-size: 1.5rem;
   font-weight: bold;
+
   &:hover {
     color: #fff3f0;
   }

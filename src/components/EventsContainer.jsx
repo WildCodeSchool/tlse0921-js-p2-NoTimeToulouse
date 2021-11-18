@@ -18,6 +18,7 @@ const EventsContainer = () => {
       .then((fetchedEvents) => fetchedEvents.map((e) => {
         const {
           nom_de_la_manifestation: name,
+          categorie_de_la_manifestation: eventCategory,
           dates_affichage_horaires: dates,
           type_de_manifestation: eventType,
           theme_de_la_manifestation: eventTheme,
@@ -38,6 +39,7 @@ const EventsContainer = () => {
           ...e,
           fields: {
             name,
+            eventCategory,
             dates,
             eventType,
             eventTheme,

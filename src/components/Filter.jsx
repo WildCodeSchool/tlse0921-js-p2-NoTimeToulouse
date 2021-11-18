@@ -89,6 +89,9 @@ const QuickSearchButton = styled.input`
   background-color: ${({ isClicked }) => (isClicked ? 'var(--important-color)' : 'white')};
 `;
 const QuickSearchContainer = styled.div`
+  font-family: var(--text-font);
+  width: 100%;
+  margin-top: 1em;
   display: flex;
   justify-content: space-evenly;
 `;

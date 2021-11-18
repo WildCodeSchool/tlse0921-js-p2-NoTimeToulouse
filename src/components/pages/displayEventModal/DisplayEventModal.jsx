@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Location from '../evenements/Location';
 import '../../../index.css';
+// import FetchApiUnsplash from '../../api/FetchApiUnsplash';
 
 const DisplayEventModal = ({ event, closeModal, openModal }) => (
   <BackModal

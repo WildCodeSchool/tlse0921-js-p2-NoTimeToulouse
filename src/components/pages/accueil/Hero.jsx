@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Hero = () => (
   <ImgContainer>
@@ -7,10 +8,12 @@ const Hero = () => (
       Toulousain
     </HeroTitle>
     <ButtonContainer>
-      <QuickButtonLeft>Concert</QuickButtonLeft>
-      <QuickButtonLeft>Musique</QuickButtonLeft>
-      <QuickButtonRight>Art</QuickButtonRight>
-      <QuickButtonRight>Sport</QuickButtonRight>
+      <Link to="/evenements" className="btn-hero">
+        <QuickButtonLeft>Trouver un événement</QuickButtonLeft>
+      </Link>
+      <Link to="/contact" className="btn-hero">
+        <QuickButtonRight>Nous contacter</QuickButtonRight>
+      </Link>
     </ButtonContainer>
   </ImgContainer>
 );
@@ -34,16 +37,19 @@ const HeroTitle = styled.h1`
 `;
 const ButtonContainer = styled.div`
   margin-top: 2em;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   @media screen and (min-width: 770px) {
-    width: 85%;
+    width: 30%;
   }
 `;
 const QuickButtonLeft = styled.button`
+  display: flex;
+  align-items: center;
   font-size: 1em;
-  width: 20%;
+  padding: 1em;
   height: 50px;
   color: white;
   font-weight: bold;
@@ -59,9 +65,11 @@ const QuickButtonLeft = styled.button`
   }
 `;
 const QuickButtonRight = styled.button`
+  display: flex;
+  align-items: center;
   font-size: 1em;
-  width: 20%;
   height: 50px;
+  padding: 1em;
   color: var(--important-color);
   font-weight: bold;
   font-family: var(--title-font);

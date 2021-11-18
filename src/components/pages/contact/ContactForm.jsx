@@ -28,17 +28,17 @@ const UserCategory = styled.div`
 `;
 
 const Form = styled.form`
-
-  margin-top: 25%;
-  padding-bottom: 2em;
   background-color: #86bbd8;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 15px;
+  padding-bottom: 2em;
   @media (min-width: 480px) {
-    width: 50%;
+    width: 60%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    border-radius: 15px;
   }
 `;
 
@@ -52,6 +52,7 @@ const FormContent = styled.div`
     margin-top: 1.5em;
     width: 80%;
   }
+
   input {
     margin-top: 5px;
     width: 100%;
@@ -68,11 +69,12 @@ const FormContent = styled.div`
     border-radius: 5px;
   }
 `;
+
 const Button = styled.input`
   width: 80%;
   height: 50px;
   margin-top: 1em;
-  background-color: #f06e96;
+  background-color: #ff9f1c;
   border-radius: 5px;
   border: 0;
   font-size: 20px;

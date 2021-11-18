@@ -126,10 +126,7 @@ const Burger = styled.div`
   flex-direction: column;
   cursor: pointer;
   background-color: #f06e96;
-  margin-top: 25px;
-  margin-left: 30px;
-  margin-right: 20px;
-  margin-bottom: none;
+  margin: 30px 20px 30px 20px;
   padding: none;
   height: 30px;
   display: flex;

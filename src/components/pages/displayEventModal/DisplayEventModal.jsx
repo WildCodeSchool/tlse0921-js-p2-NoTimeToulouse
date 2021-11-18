@@ -43,7 +43,7 @@ const DisplayEventModal = ({ event, closeModal }) => {
           <TitleEvent>{event.fields.name}</TitleEvent>
         </HeadEvent>
         <DescribeEvent>
-          <ImgEvent src={imgUrl} alt="minautaure au capitole" />
+          <ImgEvent src={imgUrl} alt="un évènement" />
           <LongDescription>{event.fields.longDescription}</LongDescription>
         </DescribeEvent>
         <DetailEvent>

@@ -18,7 +18,7 @@ const DisplayEventModal = ({ event, closeModal, openModal }) => (
           closeModal();
         }}
       >
-        X
+        <p>X</p>
       </ButtonCloseModal>
       <TitleEvent>{event.fields.name}</TitleEvent>
       <DescribeEvent>
@@ -74,9 +74,12 @@ const BackModal = styled.div`
 `;
 
 const ButtonCloseModal = styled.button`
+  display: flex;
   margin: 20px;
-  size: 3em;
+  size: 15em;
   cursor: pointer;
+  background: none;
+  border: none;
 `;
 
 const SampleEvent = styled.div`

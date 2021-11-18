@@ -1,5 +1,54 @@
-import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
+import DisplayEventModal from '../displayEventModal/DisplayEventModal';
+
+const DisplayEvents = ({ eventsToDisplay }) => {
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  function openEventDetails(event) {
+    setSelectedEvent(event);
+    setOpenModal(true);
+  }
+
+  return (
+    <ContainerCards>
+      {eventsToDisplay.map((event) => (
+        <EventCard>
+          <ImgEvent />
+          <MainContainer>
+            <CardsTitle>{event.fields.name}</CardsTitle>
+            <div className="description">
+              {event.fields.littleDescription.length > 100 ? (
+                <p>{`${event.fields.littleDescription.slice(0, 100)} ...`}</p>
+              ) : (
+                <p>{event.fields.littleDescription}</p>
+              )}
+            </div>
+            <CardFooter>
+              <ListInfoCard className="infospratiques">
+                {event.fields.dates && <li>{event.fields.dates}</li>}
+                {event.fields.city && <li>{event.fields.city}</li>}
+                {event.fields.eventTheme && <li>{event.fields.eventTheme}</li>}
+                {event.fields.price && <li>{event.fields.price}</li>}
+              </ListInfoCard>
+              <ButtonOpenEvent onClick={() => openEventDetails(event)}>
+                Voir plus
+              </ButtonOpenEvent>
+            </CardFooter>
+          </MainContainer>
+        </EventCard>
+      ))}
+      {openModal && (
+        <DisplayEventModal
+          event={selectedEvent}
+          closeModal={() => setOpenModal(false)}
+        />
+      )}
+    </ContainerCards>
+  );
+};
+
+export default DisplayEvents;
 
 const ContainerCards = styled.div`
   display: flex;
@@ -43,7 +92,7 @@ const ButtonOpenEvent = styled.button`
   border: 2px solid var(--important-color);
   border-radius: 5px;
   color: var(--light-color);
-  background-color: var(--important-color);)
+  background-color: var(--important-color);
 `;
 const CardFooter = styled.div`
   display: flex;
@@ -51,33 +100,3 @@ const CardFooter = styled.div`
   justify-content: space-between;
   align-items: end;
 `;
-
-const DisplayEvents = ({ eventsToDisplay }) => (
-  <ContainerCards>
-    {eventsToDisplay.map((event) => (
-      <EventCard>
-        <ImgEvent />
-        <MainContainer>
-          <CardsTitle>{event.fields.name}</CardsTitle>
-          <div className="description">
-            {event.fields.littleDescription.length > 100 ? (
-              <p>{`${event.fields.littleDescription.slice(0, 100)} ...`}</p>
-            ) : (
-              <p>{event.fields.littleDescription}</p>
-            )}
-          </div>
-          <CardFooter>
-            <ListInfoCard className="infospratiques">
-              {event.fields.dates && <li>{event.fields.dates}</li>}
-              {event.fields.city && <li>{event.fields.city}</li>}
-              {event.fields.eventTheme && <li>{event.fields.eventTheme}</li>}
-              {event.fields.price && <li>{event.fields.price}</li>}
-            </ListInfoCard>
-            <ButtonOpenEvent>Voir plus</ButtonOpenEvent>
-          </CardFooter>
-        </MainContainer>
-      </EventCard>
-    ))}
-  </ContainerCards>
-);
-export default DisplayEvents;

@@ -9,6 +9,8 @@
 
 * {
   text-decoration: none;
+  list-style: none;
+  padding: 0;
 }
 
 body {
@@ -42,8 +44,4 @@ p {
 
 .div-search {
   margin: auto;
-}
-
-.search-container {
-  width: 100%;
 }

@@ -38,7 +38,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 2em;
   @media (min-width: 480px) {
     width: 60%;
     margin-top: 2.5%;

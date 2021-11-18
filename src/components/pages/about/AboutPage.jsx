@@ -18,6 +18,7 @@ const Presentation = styled.p`
 
 const TeamGif = styled.img`
   width: 40%;
+  margin: auto;
 `;
 const TeamImg = styled.img`
   width: 100%;
@@ -29,7 +30,7 @@ const TitleTeam = styled.h2`
 `;
 
 const AboutPage = () => (
-  <About className="about">
+  <About>
     <TeamImg src={team} alt="team" />
     <TitleTeam>No Team Toulouse</TitleTeam>
     <Presentation>

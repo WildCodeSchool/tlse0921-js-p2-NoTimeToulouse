@@ -1,8 +1,10 @@
-import ImgGrid from '../pages/accueil/ImgGrid';
+import Hero from '../pages/accueil/Hero';
+import DisplayLines from '../pages/accueil/EventsInline/DisplayLines';
 
 const HomePage = () => (
   <>
-    <ImgGrid />
+    <Hero />
+    <DisplayLines />
   </>
 );
 

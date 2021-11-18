@@ -82,8 +82,8 @@ const QuickSearchButton = styled.input`
   margin-top: 2%;
   margin-bottom: 2%;
   font-family: var(--text-font);
-  width: 20%;
   height: 50px;
+  width: 20%;
   color: ${({ isClicked }) => (isClicked ? 'white' : 'var(--important-color)')};
   font-weight: bold;
   border-radius: 5px;

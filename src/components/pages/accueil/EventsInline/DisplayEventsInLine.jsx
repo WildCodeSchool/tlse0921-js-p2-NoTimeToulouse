@@ -19,12 +19,13 @@ const DisplayEventsInLine = ({ eventsToDisplay }) => (
 
 const EventContainer = styled.div`
   display: flex;
-  width: 300%;
+  width: 400%;
 `;
 const CardEvent = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 0.5em;
+  margin-right: 2em;
   width: 40%;
   height: 50vh;
   border: 1px solid black;

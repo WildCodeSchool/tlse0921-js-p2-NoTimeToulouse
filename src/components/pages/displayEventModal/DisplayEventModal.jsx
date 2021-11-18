@@ -2,17 +2,9 @@ import styled from 'styled-components';
 import Location from '../evenements/Location';
 import '../../../index.css';
 
-const DisplayEventModal = ({ event, closeModal, openModal }) => (
-  <BackModal
-    onClick={() => {
-      closeModal();
-    }}
-  >
-    <SampleEvent
-      onClick={() => {
-        openModal();
-      }}
-    >
+const DisplayEventModal = ({ event, closeModal }) => (
+  <BackModal>
+    <SampleEvent>
       <ButtonCloseModal
         onClick={() => {
           closeModal();
@@ -70,23 +62,23 @@ const BackModal = styled.div`
   align-items: center;
   z-index: 50;
   overflow: scroll;
-  cursor: pointer;
 `;
 
 const ButtonCloseModal = styled.button`
-  display: flex;
   margin: 20px;
-  size: 15em;
   cursor: pointer;
   background: none;
   border: none;
+
+  p {
+    size: 40px;
+  }
 `;
 
 const SampleEvent = styled.div`
   width: 100%;
-  height: 100vh;
   top: 15%;
-  background-color: #86bbd8;
+  background-color: var(--light-color);
   border-radius: 10px;
   z-index: 500;
   cursor: default;
@@ -102,11 +94,11 @@ const TitleEvent = styled.h1`
 `;
 
 const Button = styled.button`
-  color: var(--secondary-color);
+  color: var(--dark-color);
   font-size: 4em;
   width: 50%;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
   display: flex;
   justify-content: center;
 
@@ -118,7 +110,7 @@ const Button = styled.button`
 const DescribeEvent = styled.section`
   display: flex;
   flex-direction: column;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-style: bold;
 
   @media screen and (min-width: 850px) {
@@ -133,7 +125,7 @@ const ImgEvent = styled.img`
   margin-left: 5px;
   border-radius: 10px;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 480px) {
   }
 `;
 
@@ -154,4 +146,7 @@ const InfoCard = styled.section`
 const DescribeList = styled.section`
   font-weight: bold;
   font-size: 16px;
+  background-color: var(--secondary-color);
+  padding: 0.5em;
+  border-radius: 5px;
 `;

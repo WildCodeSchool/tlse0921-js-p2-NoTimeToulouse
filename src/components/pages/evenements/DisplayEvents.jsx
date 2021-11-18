@@ -33,7 +33,7 @@ const DisplayEvents = ({ eventsToDisplay }) => {
                 {event.fields.price && <li>{event.fields.price}</li>}
               </ListInfoCard>
               <ButtonOpenEvent onClick={() => openEventDetails(event)}>
-                Voir plus
+                En savoir plus
               </ButtonOpenEvent>
             </CardFooter>
           </MainContainer>
@@ -55,13 +55,14 @@ export default DisplayEvents;
 const EventCard = styled.div`
   box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
+  width: 95%;
   margin-top: 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff3f0;
+  background-color: white;
   @media (min-width: 480px) {
-    width: 80%;
+    width: 60%;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
   }
@@ -81,8 +82,8 @@ const ContainerCards = styled.div`
   flex-direction: column;
   justify-content: space-between;
   font-size: 16px;
+  margin-bottom: 2em;
 `;
-
 const CardsTitle = styled.h2`
   padding-inline: 0.5em;
   font-family: var(--title-font);
@@ -113,7 +114,7 @@ const ListInfoCard = styled.ul`
   margin-left: 16px;
   list-style-type: none;
   background: #ff9f1c;
-  width: 50%;
+  width: 30%;
   font-size: 12px;
   padding: 0.5rem;
   border-radius: 5px;

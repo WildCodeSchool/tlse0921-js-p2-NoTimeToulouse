@@ -66,10 +66,8 @@ const SocialLink = styled.div`
 
 const Wrapper = styled.section`
   background: var(--important-color);
-  margin-top: 300px;
   font-family: var(--text-font);
   text-decoration: none;
-
   @media screen and (min-width: 600px) {
     display: flex;
     flex-direction: row;
@@ -195,14 +193,14 @@ const Footer = () => (
           >
             React Leaflet
           </Hyperlien>
-
         </LinkCont>
         <LinkCont>
           <Hyperlien
             href="https://data.toulouse-metropole.fr/pages/accueilv3/"
             target="_blank"
             rel="noreferrer"
-          >API de Toulouse métropole
+          >
+            API de Toulouse métropole
           </Hyperlien>
         </LinkCont>
       </ContributionList>

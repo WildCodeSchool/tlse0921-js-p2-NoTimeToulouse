@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import fetchApiUnsplash from '../../../api/FetchApiUnsplash';
+// import fetchApiUnsplash from '../../../api/FetchApiUnsplash';
 
 const DisplayEventsInLine = ({ eventsToDisplay }) => (
   <EventContainer>
     {eventsToDisplay.map((event) => (
       <CardEvent>
         <TitleEvent>{event.fields.name}</TitleEvent>
-        <ButtonImgEvent>
-          <EventImg
-            src={fetchApiUnsplash(event.fields.eventCategory).urlImg}
-            alt={event.fields.name}
-          />
-        </ButtonImgEvent>
+        <EventLogo />
+        <HeroCard />
+        <MainCard>
+          <LeftCard />
+          <RightCard />
+        </MainCard>
       </CardEvent>
     ))}
   </EventContainer>
@@ -19,39 +19,55 @@ const DisplayEventsInLine = ({ eventsToDisplay }) => (
 
 const EventContainer = styled.div`
   display: flex;
-  width: 200%;
+  width: 400%;
 `;
 const CardEvent = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 0.5em;
-  width: 20%;
-  height: 30vh;
+  margin-right: 2em;
+  width: 40%;
+  height: 50vh;
   border: 1px solid black;
   border-radius: 10px;
   position: relative;
 `;
-const EventImg = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-`;
 const TitleEvent = styled.h2`
   position: absolute;
   font-size: 1.5em;
-  bottom: 20%;
-  left: 3%;
+  top: 0;
+  width: 100%;
+  text-align: center;
   background-color: rgba(255, 255, 255, 30%);
 `;
-const ButtonImgEvent = styled.button`
-  height: 100%;
-  width: 100%;
+const HeroCard = styled.img`
+  width: 100;
+  height: 45%;
+  background-color: pink;
   border-radius: 10px;
-  border: 0;
-  cursor: pointer;
-  &:hover {
-    background-color: rgba(255, 255, 255, 30%);
-  }
+  box-shadow: 0px 16px 21px -6px rgba(0, 0, 0, 0.4);
+`;
+const EventLogo = styled.img`
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  background-color: whitesmoke;
+  border-radius: 100%;
+  box-shadow: 0px 16px 21px -6px rgba(0, 0, 0, 0.4);
+`;
+const MainCard = styled.div`
+  height: 45%;
+  width: 100%;
+`;
+const LeftCard = styled.div`
+  width: 100%;
+  background-color: green;
+`;
+const RightCard = styled.div`
+  width: 100%;
+  background-color: grey;
 `;
 
 export default DisplayEventsInLine;

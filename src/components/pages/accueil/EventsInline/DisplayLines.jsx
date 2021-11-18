@@ -5,11 +5,11 @@ const LinesContainer = styled.div`
   margin-top: 10%;
   display: flex;
   flex-direction: column;
-  width: 90%;
-  height: 80%;
+  width: 95%;
+  height: 100%;
 `;
 const TitleContainer = styled.h2`
-  margin-top: 4%;
+  margin-top: 5%;
 `;
 const DisplayLines = () => (
   <LinesContainer>

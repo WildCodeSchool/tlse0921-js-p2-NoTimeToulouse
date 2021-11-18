@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import '../index.css';
 import DisplayEvents from './pages/evenements/DisplayEvents';
 import Filter from './Filter';
@@ -73,12 +74,16 @@ const EventsContainer = () => {
   }, [filterValue]);
 
   return (
-    <div className="search-container">
+    <SearchContainer className="search-container">
       <Filter filterValue={filterValue} setFilterValue={setFilterValue} />
       <DisplayEvents eventsToDisplay={eventsToDisplay} />
-    </div>
+    </SearchContainer>
   );
   // ajout du tableau d'objet dans le state afin de l'utiliser de la façon que l'on veut
 };
+
+const SearchContainer = styled.div`
+  width: 100%;
+`;
 
 export default EventsContainer;

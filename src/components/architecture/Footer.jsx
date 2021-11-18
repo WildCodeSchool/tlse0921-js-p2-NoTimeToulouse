@@ -175,7 +175,7 @@ const Footer = () => (
     </SocialLink>
     <LegalMention>
       <ContributionList>
-        Realisé avec :
+        Développé avec :
         <LinkCont>
           <Hyperlien
             href="https://styled-components.com/"

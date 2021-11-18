@@ -168,9 +168,15 @@ const LongDescription = styled.p`
 const DetailEvent = styled.section`
   padding: 1em;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   align-items: center;
+
+  @media screen and (min-width: 850px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .aside {
     flex-direction: column;
@@ -196,9 +202,13 @@ const DescribeList = styled.section`
 const ButtonWay = styled.button`
   padding: 0.8em;
   font-size: 16px;
-  /* border: 2px solid var(--important-color); */
+  margin-bottom: 2em;
   border-radius: 5px;
   color: var(--light-color);
   background-color: var(--important-color);
   font-weight: bold;
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: none;
+  }
 `;

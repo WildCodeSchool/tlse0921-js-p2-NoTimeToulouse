@@ -10,8 +10,22 @@ const LinesContainer = styled.div`
   padding: 1em;
 `;
 const TitleContainer = styled.h2`
+  width: 20%;
   margin-top: 5%;
   font-family: var(--title-font);
+  position: relative;
+  &:after {
+    border-radius: 5px;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    background: var(--important-color);
+    z-index: -1;
+  }
 `;
 const DisplayLines = () => (
   <LinesContainer>

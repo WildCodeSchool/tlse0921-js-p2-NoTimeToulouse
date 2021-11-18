@@ -103,8 +103,10 @@ const ButtonModal = styled.button`
   width: 100%;
   height: 100%;
   border: 0;
-  font-size: 2em;
-  font-family: var(--text-font);
+  font-size: 2.5em;
+  color: white;
+  font-weight: bold;
+  font-family: var(--title-font);
   background: none;
   border-radius: 0 0 10px 10px;
   background-color: var(--secondary-color);

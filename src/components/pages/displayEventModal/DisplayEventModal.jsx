@@ -162,6 +162,7 @@ const LongDescription = styled.p`
   margin: 0;
   text-align: justify;
   width: 100%;
+  padding: 0 1em;
 `;
 
 const DetailEvent = styled.section`
@@ -193,10 +194,11 @@ const DescribeList = styled.section`
 `;
 
 const ButtonWay = styled.button`
-  width: auto;
-  color: var(--dark-color);
-  font-weight: bold;
+  padding: 0.8em;
+  font-size: 16px;
+  /* border: 2px solid var(--important-color); */
   border-radius: 5px;
-  border: 2px solid var(--important-color);
-  font-size: 2em;
+  color: var(--light-color);
+  background-color: var(--important-color);
+  font-weight: bold;
 `;

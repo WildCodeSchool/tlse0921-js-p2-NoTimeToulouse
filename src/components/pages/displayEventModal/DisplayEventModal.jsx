@@ -74,10 +74,8 @@ const BackModal = styled.div`
 `;
 
 const ButtonCloseModal = styled.button`
-  background-color: var(--secondary-color);
-  height: 40px;
-  width: 40px;
   margin: 20px;
+  size: 3em;
   cursor: pointer;
 `;
 

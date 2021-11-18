@@ -38,6 +38,7 @@ const ButtonContainer = styled.div`
   justify-content: space-around;
 `;
 const QuickButtonLeft = styled.button`
+  font-size: 1em;
   width: 20%;
   height: 50px;
   color: white;
@@ -45,14 +46,27 @@ const QuickButtonLeft = styled.button`
   border-radius: 5px;
   border: var(--important-color) solid 3px;
   background-color: var(--important-color);
+  &:hover {
+    cursor: pointer;
+    border: white solid 3px;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--important-color);
+  }
 `;
 const QuickButtonRight = styled.button`
+  font-size: 1em;
   width: 20%;
   height: 50px;
   color: var(--important-color);
   font-weight: bold;
   border-radius: 5px;
-  border: white solid 3px;
-  background: rgba(255, 255, 255, 0.1);
+  border: var(--important-color) solid 3px;
+  background: rgba(255, 255, 255, 0.7);
+  &:hover {
+    cursor: pointer;
+    border: var(--important-color) solid 3px;
+    background-color: var(--important-color);
+    color: white;
+  }
 `;
 export default Hero;

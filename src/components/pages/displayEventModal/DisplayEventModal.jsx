@@ -1,61 +1,85 @@
 import styled from 'styled-components';
 import Location from '../evenements/Location';
 import '../../../index.css';
-// import FetchApiUnsplash from '../../api/FetchApiUnsplash';
+import FetchApiUnsplash from '../../api/FetchApiUnsplash';
 
-const DisplayEventModal = ({ event, closeModal, openModal }) => (
-  <BackModal
-    onClick={() => {
-      closeModal();
-    }}
-  >
-    <SampleEvent
+const DisplayEventModal = ({ event, closeModal, openModal }) => {
+  let imgUrl = '';
+
+  if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Concert')
+  ) {
+    imgUrl = FetchApiUnsplash('Concert').urlImg;
+  } else if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Cinéma')
+  ) {
+    imgUrl = FetchApiUnsplash('cinema').urlImg;
+  } else if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Exposition')
+  ) {
+    imgUrl = FetchApiUnsplash('exposition').urlImg;
+  } else if (
+    event.fields.eventCategory
+    && event.fields.eventCategory.includes('Art')
+  ) {
+    imgUrl = FetchApiUnsplash('art').urlImg;
+  } else {
+    imgUrl = FetchApiUnsplash('toulouse').urlImg;
+  }
+  return (
+    <BackModal
       onClick={() => {
-        openModal();
+        closeModal();
       }}
     >
-      <ButtonCloseModal
+      <SampleEvent
         onClick={() => {
-          closeModal();
+          openModal();
         }}
       >
-        X
-      </ButtonCloseModal>
-      <TitleEvent>{event.fields.name}</TitleEvent>
-      <DescribeEvent>
-        <ImgEvent
-          src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/c105.0.414.414a/p552x414/45292619_10217685065343411_2021212850743148544_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=da31f3&_nc_ohc=H35g6E4IkJMAX9axd5g&tn=J4RtpVHgSOjpxaCr&_nc_ht=scontent-cdt1-1.xx&oh=13587d2959f7382340a17cd5874f2194&oe=61AB59C3"
-          alt="minautaure au capitole"
-        />
-        <LongDescription>{event.fields.longDescription}</LongDescription>
-      </DescribeEvent>
-      <DetailEvent>
-        <InfoEvent>
-          <InfoCard>
-            <DescribeList className="describeList">
-              <ul>
-                <li>{event.fields.dates}</li>
-                <li>
-                  {event.fields.adress} {event.fields.zipCode}{' '}
-                  {event.fields.city}
-                </li>
-                {event.fields.price && <li>{event.fields.price}</li>}
-                {event.fields.access && <li>{event.fields.access}</li>}
-              </ul>
-            </DescribeList>
-          </InfoCard>
-          <Location
-            marker={[event.fields.geoPoint]}
-            adress={event.fields.adress}
-          />
-        </InfoEvent>
-        <Button as="a" href="https://citymapper.com/toulouse" target="_blank">
-          Trouves ton chemin
-        </Button>
-      </DetailEvent>
-    </SampleEvent>
-  </BackModal>
-);
+        <ButtonCloseModal
+          onClick={() => {
+            closeModal();
+          }}
+        >
+          X
+        </ButtonCloseModal>
+        <TitleEvent>{event.fields.name}</TitleEvent>
+        <DescribeEvent>
+          <ImgEvent src={imgUrl} />
+          <LongDescription>{event.fields.longDescription}</LongDescription>
+        </DescribeEvent>
+        <DetailEvent>
+          <InfoEvent>
+            <InfoCard>
+              <DescribeList className="describeList">
+                <ul>
+                  <li>{event.fields.dates}</li>
+                  <li>
+                    {event.fields.adress} {event.fields.zipCode}{' '}
+                    {event.fields.city}
+                  </li>
+                  {event.fields.price && <li>{event.fields.price}</li>}
+                  {event.fields.access && <li>{event.fields.access}</li>}
+                </ul>
+              </DescribeList>
+            </InfoCard>
+            <Location
+              marker={[event.fields.geoPoint]}
+              adress={event.fields.adress}
+            />
+          </InfoEvent>
+          <Button as="a" href="https://citymapper.com/toulouse" target="_blank">
+            Trouves ton chemin
+          </Button>
+        </DetailEvent>
+      </SampleEvent>
+    </BackModal>
+  );
+};
 
 export default DisplayEventModal;
 

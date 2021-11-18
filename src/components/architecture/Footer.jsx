@@ -2,29 +2,36 @@ import styled from 'styled-components';
 import facebook from '../../assets/facebook.png';
 import github from '../../assets/github.png';
 import twitter from '../../assets/twitter.png';
+import wild from '../../assets/wild.png';
 
 const NewsLetter = styled.form`
   display: flex;
-  justify-content: center;
-
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 2em;
   label {
     padding: 1em;
-    width: 20%;
-    padding-right: 0;
+    text-align: center;
+    font-weight: bold;
+    color: white;
   }
   input {
-    width: 50%;
-    height: 25px;
-    margin-top: 5px;
-    margin-left: 20px;
-    border-radius: 7px;
-    text-align: center;
+    margin-top: 0.8em;
+    border-color: white;
+    width: 60%;
   }
-  button {
-    width: 100px;
-    height: 25px;
-    margin-top: 42px;
+  @media screen and (min-width: 600px) {
+    align-items: center;
+    input {
+      width: 60%;
+      margin-bottom: none;
+    }
   }
+`;
+
+const LabelEmail = styled.label`
+  align-items: center;
 `;
 
 const Img = styled.img`
@@ -36,18 +43,35 @@ const Img = styled.img`
   }
 `;
 
+const SubmitButton = styled.button`
+  width: 20%;
+  height: 40px;
+  color: var(--important-color);
+  font-weight: bold;
+  border-radius: 5px;
+  border: var(--important-color) solid 3px;
+  background-color: white;
+`;
+
 const SocialLink = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
   @media screen and (min-width: 600px) {
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
   }
 `;
 
 const Wrapper = styled.section`
   background: var(--important-color);
+  @media screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 `;
 
 const LegalMention = styled.div`
@@ -58,15 +82,23 @@ const LegalMention = styled.div`
 `;
 
 const ContributionList = styled.ul`
+  text-align: center;
   list-style: none;
   display: flex;
   padding: 0;
   flex-direction: column;
   justify-content: center;
+  font-weight: bold;
+  color: white;
   width: 100%;
-
+  a {
+    font-weight: bold;
+    color: white;
+  }
   @media screen and (min-width: 600px) {
     flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
   }
 `;
 
@@ -74,29 +106,42 @@ const LinkCont = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
-  a {
-    margin-left: 0.2em;
+  font-weight: bold;
+  @media screen and (min-width: 600px) {
+  }
+`;
+
+const Hyperlien = styled.a`
+  &:hover {
+    color: black;
   }
 `;
 
 const MadeBy = styled.p`
   text-align: center;
+  @media screen and (min-width: 600px) {
+    font-weight: bold;
+    color: white;
+  }
 `;
+function handleSubmit() {
+  alert('Merci de vous être inscrit.e à notre newsletter !');
+}
 const Footer = () => (
   <Wrapper className="footer">
     <NewsLetter>
-      <label htmlFor="email">
-        inscris toi afin de ne rien louper
+      <LabelEmail htmlFor="email">
+        Inscris-toi afin de ne rater aucune nouveauté !
         <input
           type="email"
           name="email"
           id="email"
           placeholder="notime@toulouse.fr"
         />
-      </label>
-      <button type="submit" value="Submit">
+      </LabelEmail>
+      <SubmitButton type="submit" value="Submit" onClick={handleSubmit}>
         Submit
-      </button>
+      </SubmitButton>
     </NewsLetter>
     <SocialLink>
       <a
@@ -118,40 +163,47 @@ const Footer = () => (
       <a href="https://twitter.com/WCS_OC" target="_blank" rel="noreferrer">
         <Img src={twitter} alt="logo twitter" />
       </a>
+      <a
+        href="https://www.wildcodeschool.com/fr-FR"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Img src={wild} alt="logowild" />
+      </a>
     </SocialLink>
     <LegalMention>
       <ContributionList>
         Realisé avec :
         <LinkCont>
-          <a
+          <Hyperlien
             href="https://styled-components.com/"
             target="_blank"
             rel="noreferrer"
           >
             Styled components
-          </a>
+          </Hyperlien>
         </LinkCont>
         <LinkCont>
-          <a
+          <Hyperlien
             href="https://react-leaflet.js.org/"
             target="_blank"
             rel="noreferrer"
           >
-            , React Leaflet
-          </a>
+            React Leaflet
+          </Hyperlien>
+
         </LinkCont>
         <LinkCont>
-          <a
+          <Hyperlien
             href="https://data.toulouse-metropole.fr/pages/accueilv3/"
             target="_blank"
             rel="noreferrer"
-          >
-            , API de Toulouse métropole
-          </a>
+          >API de Toulouse métropole
+          </Hyperlien>
         </LinkCont>
       </ContributionList>
-      <MadeBy>Réalisé ♥️ by Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
-      <MadeBy>session dev 09_2021 de Wild Code School</MadeBy>
+      <MadeBy>Réalisé avec ♥️ par Emma, Anaïs, Kachiri, Cyril & Maxime</MadeBy>
+      <MadeBy>Session dev 09-2021 de la Wild Code School</MadeBy>
     </LegalMention>
   </Wrapper>
 );

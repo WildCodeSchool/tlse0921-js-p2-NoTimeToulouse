@@ -10,9 +10,22 @@ const DisplayEventsInLine = ({ eventsToDisplay }) => (
           <City>{event.fields.city}</City>
         </HeroCard>
         <MainCard>
-          <LeftCard>{event.fields.dates}</LeftCard>
+          <LeftCard>
+            <Date>
+              <div>
+                {event.fields.dates.slice(3, 6).replace('/', ' ')}
+                {event.fields.dates.slice(6, 8)}
+              </div>
+              <div>{event.fields.dates.slice(9, 13)}</div>
+            </Date>
+            <p className="price">
+              Prix : {event.fields.price ? event.fields.price : 'Free'}
+            </p>
+          </LeftCard>
           <RightCard>
-            {event.fields.price ? event.fields.price : <p>Free</p>}
+            {event.fields.littleDescription.length > 150
+              ? `${event.fields.littleDescription.slice(0, 150)} ...`
+              : event.fields.littleDescription}
           </RightCard>
         </MainCard>
         <FooterCard>
@@ -61,12 +74,22 @@ const MainCard = styled.div`
   display: flex;
 `;
 const LeftCard = styled.div`
+  display: flex;
+  padding: 1em;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid grey;
   width: 100%;
-  background-color: green;
+  color: var(--principal-color);
+  font-weight: bold;
+  justify-content: center;
+  font-size: 1.5em;
 `;
 const RightCard = styled.div`
   width: 100%;
-  background-color: grey;
+  font-size: 1.8em;
+  padding: 1em;
+  font-family: var(--text-font);
 `;
 const City = styled.p`
   font-size: 1.6em;
@@ -88,5 +111,11 @@ const ButtonModal = styled.button`
   &:hover {
     background-color: var(--secondary-color-light);
   }
+`;
+const Date = styled.div`
+  color: var(--secondary-color);
+  font-weight: bold;
+  justify-content: center;
+  font-size: 3em;
 `;
 export default DisplayEventsInLine;

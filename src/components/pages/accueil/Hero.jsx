@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const Hero = () => (
   <ImgContainer>
     <HeroTitle>
-      Votre Agenda événementiel <br />
+      Votre Agenda évènementiel <br />
       Toulousain
     </HeroTitle>
     <ButtonContainer>
       <Link to="/evenements" className="btn-hero">
-        <QuickButtonLeft>Trouver un événement</QuickButtonLeft>
+        <QuickButtonLeft>Trouver un évènement</QuickButtonLeft>
       </Link>
       <Link to="/contact" className="btn-hero">
         <QuickButtonRight>Nous contacter</QuickButtonRight>

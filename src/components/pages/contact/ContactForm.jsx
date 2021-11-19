@@ -83,12 +83,12 @@ const Button = styled.input`
   width: 80%;
   height: 50px;
   margin-top: 1em;
-  background-color: #ff9f1c;
+  background-color: var(--important-color);
   border-radius: 5px;
   border: 0;
   font-size: 20px;
   &:hover {
-    background-color: #f06e96;
+    background-color: var(--secondary-color);
   }
 `;
 

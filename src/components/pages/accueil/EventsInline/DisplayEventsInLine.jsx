@@ -25,9 +25,9 @@ const DisplayEventsInLine = ({ eventsToDisplay }) => (
           <RightCard>
             {event.fields.littleDescription.length > 150
               ? `${event.fields.littleDescription
-                .slice(0, 150)
+                .slice(0, 120)
                 .toUpperCase()} ...`
-              : event.fields.littleDescription}
+              : event.fields.littleDescription.toUpperCase()}
           </RightCard>
         </MainCard>
         <FooterCard>
@@ -54,8 +54,8 @@ const CardEvent = styled.div`
   margin-left: 0.5em;
   margin-right: 2em;
   width: 40%;
-  height: 50vh;
-  border: 1px solid grey;
+  height: 55vh;
+  border: 3px solid var(--principal-color);
   border-radius: 10px;
   @media screen and (min-width: 770px) {
     width: 60%;
@@ -63,17 +63,19 @@ const CardEvent = styled.div`
   }
 `;
 const TitleEvent = styled.h2`
-  font-size: 2em;
+  font-size: 2.5em;
   font-family: var(--title-font);
   width: 100%;
   text-align: center;
 `;
 const HeroCard = styled.div`
-  width: 100;
+  width: 100%;
   height: 30%;
-  background-color: #efefef;
-  border-radius: 10px 10px 0px 0px;
-  border-bottom: 1px solid grey;
+  color: white;
+  font-weight: bold;
+  background-color: var(--important-color);
+  border-radius: 7px 7px 0px 0px;
+  border-bottom: 3px solid var(--principal-color);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -89,7 +91,7 @@ const LeftCard = styled.div`
   padding: 1em;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid grey;
+  border-right: 3px solid var(--principal-color);
   width: 100%;
   color: var(--principal-color);
   font-weight: bold;
@@ -98,7 +100,7 @@ const LeftCard = styled.div`
 `;
 const RightCard = styled.div`
   width: 100%;
-  font-size: 1.6em;
+  font-size: 1.8em;
   padding: 1em;
   font-family: var(--text-font);
 `;
@@ -114,15 +116,17 @@ const ButtonModal = styled.button`
   width: 100%;
   height: 100%;
   border: 0;
+  border-top: 3px solid var(--principal-color);
   font-size: 2.5em;
-  color: white;
+  color: var(--principal-color);
   font-weight: bold;
   font-family: var(--title-font);
   background: none;
   border-radius: 0 0 10px 10px;
-  background-color: var(--secondary-color);
+  background-color: #efefef;
   &:hover {
-    background-color: var(--secondary-color-light);
+    color: white;
+    background-color: var(--secondary-color);
     cursor: pointer;
   }
 `;

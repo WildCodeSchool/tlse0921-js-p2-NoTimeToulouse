@@ -32,7 +32,7 @@ const ImgContainer = styled.div`
 const HeroTitle = styled.h1`
   color: white;
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
   font-family: var(--title-font);
 `;
 const ButtonContainer = styled.div`
@@ -60,7 +60,7 @@ const QuickButtonLeft = styled.button`
   &:hover {
     cursor: pointer;
     border: white solid 3px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255);
     color: var(--important-color);
   }
 `;
@@ -75,7 +75,7 @@ const QuickButtonRight = styled.button`
   font-family: var(--title-font);
   border-radius: 5px;
   border: var(--important-color) solid 3px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255);
   &:hover {
     cursor: pointer;
     border: var(--important-color) solid 3px;

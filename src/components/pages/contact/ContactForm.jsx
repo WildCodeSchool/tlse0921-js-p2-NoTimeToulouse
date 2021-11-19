@@ -79,6 +79,7 @@ const FormContent = styled.div`
 
 const Button = styled.input`
   font-family: var(--title-font);
+  cursor: pointer;
   width: 80%;
   height: 50px;
   margin-top: 1em;

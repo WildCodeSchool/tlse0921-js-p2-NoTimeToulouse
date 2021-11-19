@@ -1,8 +1,4 @@
 import styled from 'styled-components';
-import facebook from '../../assets/facebook.png';
-import github from '../../assets/github.png';
-import twitter from '../../assets/twitter.png';
-import wild from '../../assets/wild.png';
 
 const NewsLetter = styled.form`
   display: flex;
@@ -153,25 +149,25 @@ const Footer = () => (
         label="Facebook"
         rel="noreferrer"
       >
-        <Img src={facebook} alt="logo facebook" />
+        <Img src="assets/facebook.png" alt="logo facebook" />
       </a>
       <a
         href="https://github.com/WildCodeSchool/tlse0921-js-p2-NoTimeToulouse"
         target="_blank"
         rel="noreferrer"
       >
-        <Img src={github} alt="logo gitHub" />
+        <Img src="assets/github.png" alt="logo gitHub" />
       </a>
 
       <a href="https://twitter.com/WCS_OC" target="_blank" rel="noreferrer">
-        <Img src={twitter} alt="logo twitter" />
+        <Img src="assets/twitter.png" alt="logo twitter" />
       </a>
       <a
         href="https://www.wildcodeschool.com/fr-FR"
         target="_blank"
         rel="noreferrer"
       >
-        <Img src={wild} alt="logowild" />
+        <Img src="/assets/wild.png" alt="logowild" />
       </a>
     </SocialLink>
     <LegalMention>

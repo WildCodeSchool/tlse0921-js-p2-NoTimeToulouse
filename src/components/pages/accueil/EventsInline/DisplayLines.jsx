@@ -27,7 +27,7 @@ const TitleContainer = styled.h2`
     bottom: 0;
     height: 40%;
     width: 30%;
-    background: var(--important-color);
+    background: var(--secondary-color);
     z-index: -1;
     @media screen and (min-width: 770px) {
       width: 10%;

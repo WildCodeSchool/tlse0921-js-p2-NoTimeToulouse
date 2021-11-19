@@ -133,4 +133,5 @@ const ButtonOpenEvent = styled.button`
   color: var(--light-color);
   background-color: var(--important-color);
   font-weight: bold;
+  cursor: pointer;
 `;

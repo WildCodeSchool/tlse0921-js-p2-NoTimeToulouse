@@ -79,6 +79,7 @@ function Filter({ setFilterValue }) {
 }
 
 const QuickSearchButton = styled.input`
+  cursor: pointer;
   margin-top: 2%;
   margin-bottom: 2%;
   font-family: var(--text-font);

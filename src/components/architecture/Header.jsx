@@ -1,17 +1,18 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
-import logo from './assets/logoTransparent.png';
-
-/* const { Link } = Anchor; */
+import logo from '../../assets/logoTransparent.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Nav>
       <Div>
-        <Logo>
-          <img src={logo} alt="logo" />
-        </Logo>
+        <Link to="/">
+          <Logo>
+            <img src={logo} alt="logo" />
+          </Logo>
+        </Link>
         <Burger onClick={() => setIsOpen(!isOpen)}>
           <span />
           <span />
@@ -19,33 +20,35 @@ const Header = () => {
         </Burger>
       </Div>
       <Menu isOpen={isOpen}>
-        <MenuLink href="events">Évènements</MenuLink>
-        <MenuLink href="map">Carte</MenuLink>
-        <MenuLink href="contact">Contact</MenuLink>
-        <MenuLink href="whoarewe">Qui sommes-nous ?</MenuLink>
+        <Link to="/accueil">
+          <MenuLink>Accueil</MenuLink>
+        </Link>
+        <Link to="/evenements">
+          <MenuLink>Évènements</MenuLink>
+        </Link>
+        <Link to="/contact">
+          <MenuLink>Contact</MenuLink>
+        </Link>
       </Menu>
     </Nav>
   );
 };
 
-/* <Anchor>
-        <Link href="#contact" title="Contact" />
-        <Link href="#components-anchor-demo-static" title="Static demo" />
-      </Anchor> */
-
 const Nav = styled.nav`
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #f06e96;
+  background-color: var(--important-color);
   height: 70px;
   @media (min-width: 480px) {
-    height: 90px;
+    height: 95px;
   }
   @media (min-width: 1000px) {
     height: 100px;
+  }
 `;
 
 const Div = styled.div`
@@ -68,8 +71,8 @@ const Logo = styled.div`
   }
   @media (min-width: 480px) {
     img {
-      width: 28%;
-      margin-top: -18px;
+      width: 26%;
+      margin-top: -22px;
     }
   }
   @media (min-width: 1000px) {
@@ -82,15 +85,15 @@ const Logo = styled.div`
 
 const Menu = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   z-index: 10;
   flex-direction: column;
   width: 100%;
+  height: 150px;
   max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
   background-color: #f06e96;
-  opacity: 95%;
   overflow: hidden;
   z-index: 1;
   @media (min-width: 1000px) {
@@ -103,6 +106,7 @@ const Menu = styled.div`
 `;
 
 const MenuLink = styled.a`
+  font-family: var(--title-font);
   text-decoration: none;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -112,6 +116,7 @@ const MenuLink = styled.a`
   transition: all 0.3 ease-in;
   font-size: 1.5rem;
   font-weight: bold;
+
   &:hover {
     color: #fff3f0;
   }
@@ -121,10 +126,7 @@ const Burger = styled.div`
   flex-direction: column;
   cursor: pointer;
   background-color: #f06e96;
-  margin-top: 25px;
-  margin-left: 30px;
-  margin-right: 20px;
-  margin-bottom: none;
+  margin: 30px 20px 30px 20px;
   padding: none;
   height: 30px;
   display: flex;

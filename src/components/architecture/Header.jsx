@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
-import logo from '../../assets/logoTransparent.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +9,7 @@ const Header = () => {
       <Div>
         <Link to="/">
           <Logo>
-            <img src={logo} alt="logo" />
+            <img src="assets/logoTransparent.png" alt="logo" />
           </Logo>
         </Link>
         <Burger onClick={() => setIsOpen(!isOpen)}>

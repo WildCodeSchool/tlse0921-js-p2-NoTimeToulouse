@@ -63,7 +63,7 @@ const CardEvent = styled.div`
   }
 `;
 const TitleEvent = styled.h2`
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-family: var(--title-font);
   width: 100%;
   text-align: center;

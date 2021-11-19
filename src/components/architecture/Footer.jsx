@@ -51,6 +51,7 @@ const SubmitButton = styled.button`
   border-radius: 5px;
   border: var(--important-color) solid 3px;
   background-color: white;
+  cursor: pointer;
 `;
 
 const SocialLink = styled.div`

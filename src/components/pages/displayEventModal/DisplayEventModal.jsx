@@ -64,7 +64,7 @@ const DisplayEventModal = ({ event, closeModal }) => {
               href="https://citymapper.com/toulouse"
               target="_blank"
             >
-              Comment s&apos; y rendre ？
+              Comment s&apos;y rendre ？
             </ButtonWay>
           </div>
           <div className="map">
@@ -91,6 +91,10 @@ const BackModal = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 50;
+
+  @media screen and (min-width: 850px) {
+    display: flex;
+  }
 `;
 
 const ButtonCloseModal = styled.button`
@@ -108,10 +112,12 @@ const SampleEvent = styled.div`
   width: 100%;
   height: 90vh;
   background-color: white;
-  border-radius: 10px;
   z-index: 500;
   cursor: default;
-  @media (min-width: 480px) {
+  margin: 0 0;
+
+  @media (min-width: 600px) {
+    border-radius: 10px;
     width: 80%;
   }
 
@@ -128,12 +134,16 @@ const HeadEvent = styled.div`
   align-items: center;
 `;
 
-const TitleEvent = styled.h1`
+const TitleEvent = styled.h5`
   padding: 0.5em 0;
   font-family: var(--title-font);
-  font-size: 3.5em;
+  font-size: 1.5em;
   font-style: bold;
   margin: auto;
+
+  @media screen and (min-width: 600px) {
+    font-size: 3.5em;
+  }
 `;
 
 const ImgEvent = styled.img`
@@ -162,18 +172,30 @@ const LongDescription = styled.p`
   margin: 0;
   text-align: justify;
   width: 100%;
+  padding: 0 1em;
 `;
 
 const DetailEvent = styled.section`
   padding: 1em;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   align-items: center;
+
+  @media screen and (min-width: 850px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .aside {
     flex-direction: column;
     text-align: center;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 600px) {
+      margin-bottom: 0;
+    }
   }
 
   .map {
@@ -193,10 +215,14 @@ const DescribeList = styled.section`
 `;
 
 const ButtonWay = styled.button`
-  width: auto;
-  color: var(--dark-color);
-  font-weight: bold;
+  padding: 0.8em;
+  font-size: 16px;
   border-radius: 5px;
-  border: 2px solid var(--important-color);
-  font-size: 2em;
+  color: var(--light-color);
+  background-color: var(--important-color);
+  font-weight: bold;
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: none;
+  }
 `;
